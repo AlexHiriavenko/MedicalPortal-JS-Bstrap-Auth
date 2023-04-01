@@ -17,7 +17,7 @@ browserSync.create();
 const path = {
   src: {
     html: `./index.html`,
-    scss: `./src/scss/*.scss`,
+    scss: `./src/style/*.scss`,
     js: `./src/js/*.js`,
     img: `./src/images/*`,
   },
@@ -35,7 +35,7 @@ const cleanDist = () =>
 
 const buildCss = () => {
   return gulp
-    .src("./src/scss/*.css")
+    .src("./src/style/*.css")
     .pipe(sass({ outputStyle: "expanded" }))
     .pipe(cleanCss({ compatibility: "ie8" }))
     .pipe(
