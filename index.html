@@ -15,14 +15,18 @@
 
 <body>
          <div class="container-fluid">
-                  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-2">
-                           <a href="#" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                  <header
+                           class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-2">
+                           <a href="#"
+                                    class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
                                     <img class="rounded float-start logo" height="40px"
                                              src="src/images/medicine-logo.png" alt="logo">
                                     <h5 class="text-primary header__logo-title">allmedical</h5>
                            </a>
                            <div class="col-md-3 text-end">
-                                    <button type="button" class="btn btn-outline-primary me-2 login__btn header__btn-login"
+                                    <!-- Modal window added in login by data toggle and target -->
+                                    <button type="button"
+                                             class="btn btn-outline-primary me-2 login__btn header__btn-login"
                                              data-bs-toggle="modal" data-bs-target="#modal-sign-in">Login
                                     </button>
 
@@ -31,7 +35,9 @@
                                     </button>
                            </div>
 
+                           <!-- Modal window of sign in  -->
                            <div id="modal-sign-in" class="modal fade text-center" tabindex="-1">
+                                    <!-- added modal window by id(that's important) -->
                                     <div class="modal-dialog">
                                              <div class="modal-content">
                                                       <div class="modal-header">
@@ -117,13 +123,14 @@
                                     serving you and your family with the highest level of care and expertise.</p>
                   </div>
          </div>
-
+         <!-- Modal window of create visit -->
          <div id="modal-create-visit" class="modal fade text-center modal-lg" tabindex="-1" role="dialog">
+                  <!-- added modal window by id(that's important) -->
                   <div class="modal-dialog modal-dialog-scrollable">
                            <div class="modal-content">
                                     <div class="modal-header">
                                              <svg class="modal-header_svg" xmlns="http://www.w3.org/2000/svg" width="25"
-                                                      height="25" fill="currentColor" class="bi bi-calendar-plus"
+                                                      height="25" fill="currentColor " class="bi bi-calendar-plus"
                                                       viewBox="0 0 16 16">
                                                       <path
                                                                d="M8 7a.5.5 0 0 1 .5.5V9H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V10H6a.5.5 0 0 1 0-1h1.5V7.5A.5.5 0 0 1 8 7z" />
@@ -223,10 +230,9 @@
                   </div>
          </div>
 
-
          <h2 class="display-2 text-center no-cards d-none">No items have been added</h2>
          <section class="container-filter m-3"></section>
-         <section class="container-cards m-3 cards"></section>
+         <section class="container-cards m-3 cards"></section>      
 
 
          <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
