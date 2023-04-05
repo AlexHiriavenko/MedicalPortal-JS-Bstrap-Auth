@@ -30,66 +30,12 @@
           <button type="button" class="btn btn-primary header__btn-create-visit none"
                     data-bs-toggle="modal" data-bs-target="#modal-create-visit">Create visit
           </button>
-      </div>
-
-      <!-- Modal window of sign in  -->
-      <div id="modal-sign-in" class="modal fade text-center" tabindex="-1">
-          <!-- added modal window by id(that's important) -->
-          <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-header">
-                    <!-- the part with automatical close button -->
-                            <button type="button" class="btn-close"
-                                    data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                  </div>
-                  <!-- Modal window of sign in  -->
-                  <form id="signin">
-                      <div class="modal-body">
-                          <div class="form-signin w-100 m-auto">
-                              <img class="mb-4 justify-content-center"
-                                    src="src/img/medicine-logo.png"
-                                    alt="logo" width="72"
-                                    height="57" />
-                              <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-                              <div class="form-floating">
-                        <input id="input-email"
-                               name="email"
-                               type="email"
-                               class="form-control mb-3"
-                               placeholder="name@example.com"
-                               required />
-                        <label for="input-email">Email address</label>
-                </div>
-                <div class="form-floating">
-                    <input type="password"
-                              name="password"
-                              class="form-control mb-3"
-                              id="floatingPassword"
-                              placeholder="Password"
-                              required />
-                    <label
-                              for="floatingPassword">Password</label>
-                </div>
-                <div class="checkbox">
-                        <label> <input type="checkbox"
-                                      value="remember-me"
-                                      id="rememberme" />Remember me </label>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="modal-footer mb-2">
-                          <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-                      </div>
-                  </form>
-              </div>
-          </div>
-      </div>
+      </div> 
   </header>
 </div>
 <!-- filtr section under the header, we should added css classes -->
 <div class="container-fluid background_img">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-transparent">
              <div class="container-fluid">
                       <h2>Appointments</h2>
                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -99,10 +45,10 @@
                       </button>
                       <div class="collapse navbar-collapse" id="navbarNavDropdown">
                                <ul class="navbar-nav">
-                                        <li class="nav-item dropdown">
+                                        <li class="nav-item dropdown nav-item_filtr">
                                                  <a class="nav-link dropdown-toggle" href="#"
                                                           role="button" data-bs-toggle="dropdown"
-                                                          aria-expanded="false">Name</a>
+                                                          aria-expanded="false">Departments</a>
                                                  <ul class="dropdown-menu">
                                                           <li><a class="dropdown-item"
                                                                             href="#">Cardiology</a></li>
@@ -112,13 +58,7 @@
                                                                             href="#">Therapy</a></li>
                                                  </ul>
                                         </li>
-                                        <li class="nav-item">
-                                                 <a class="nav-link" href="#">Doctor</a>
-                                        </li>
-                                        <li class="nav-item">
-                                                 <a class="nav-link" href="#">Tel</a>
-                                        </li>
-                                        <li class="nav-item dropdown">
+                                        <li class="nav-item dropdown nav-item_filtr">
                                                  <a class="nav-link dropdown-toggle" href="#"
                                                           role="button" data-bs-toggle="dropdown"
                                                           aria-expanded="false">
@@ -133,7 +73,7 @@
                                                           </li>
                                                  </ul>
                                         </li>
-                                        <li class="nav-item dropdown">
+                                        <li class="nav-item dropdown nav-item_filtr">
                                                  <a class="nav-link dropdown-toggle" href="#"
                                                           role="button" data-bs-toggle="dropdown"
                                                           aria-expanded="false">
@@ -154,20 +94,20 @@
     <!-- main section with background img and welcome text -->
     <div class="main_container">
              <h1 class="display-2 text-center main_title">WELCOME</h1>
-             <p class="text-center main_text"> Welcome to our medical service! We are dedicated to
+             <p class="text-left main_text"> Welcome to our medical service! We are dedicated to
                       providing you with the
                       highest quality of care and personalized attention. Our team of experienced medical
                       professionals is committed to
                       ensuring your health and well-being.</p>
 
-             <p class="text-center main_text">Whether you're seeking routine check-ups, specialized
+             <p class="text-left main_text">Whether you're seeking routine check-ups, specialized
                       treatments, or emergency care, we are
                       here to meet your medical needs. Our state-of-the-art facilities are equipped with
                       the latest
                       technologies and tools to help diagnose and treat a wide range of medical
                       conditions.</p>
 
-             <p class="text-center main_text">At our medical service, we understand that each patient is
+             <p class="text-left main_text">At our medical service, we understand that each patient is
                       unique, and we take the time to
                       listen to your concerns and provide individualized care. Our compassionate and
                       knowledgeable
@@ -175,11 +115,66 @@
                       diagnosis to
                       recovery.</p>
 
-             <p class="text-center main_text">Thank you for choosing our medical service for your
+             <p class="text-left main_text">Thank you for choosing our medical service for your
                       healthcare needs. We look forward to
                       serving you and your family with the highest level of care and expertise.</p>
     </div>
 </div>
+
+<!-- Modal window of sign in  -->
+<div id="modal-sign-in" class="modal fade text-center" tabindex="-1">
+    <!-- added modal window by id(that's important) -->
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+              <!-- the part with automatical close button -->
+                      <button type="button" class="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"></button>
+            </div>
+            <!-- Modal window of sign in  -->
+            <form id="signin">
+                <div class="modal-body">
+                    <div class="form-signin w-100 m-auto">
+                        <img class="mb-4 justify-content-center"
+                              src="src/img/medicine-logo.png"
+                              alt="logo" width="72"
+                              height="57" />
+                        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+                        <div class="form-floating">
+                  <input id="input-email"
+                         name="email"
+                         type="email"
+                         class="form-control mb-3"
+                         placeholder="name@example.com"
+                         required />
+                  <label for="input-email">Email address</label>
+          </div>
+          <div class="form-floating">
+              <input type="password"
+                        name="password"
+                        class="form-control mb-3"
+                        id="floatingPassword"
+                        placeholder="Password"
+                        required />
+              <label
+                        for="floatingPassword">Password</label>
+          </div>
+          <div class="checkbox">
+                  <label> <input type="checkbox"
+                                value="remember-me"
+                                id="rememberme"/> <span>Remember me</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer mb-2">
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 
 <!-- Modal window of create visit -->
 <div id="modal-create-visit" class="modal fade text-center modal-lg" tabindex="-1" role="dialog">
@@ -188,7 +183,7 @@
              <div class="modal-content">
                       <div class="modal-header">
                                <!-- svg on the modal window, look like a calendar -->
-                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                               <svg class="modal-header_svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                         fill="currentColor" class="bi bi-calendar-plus"
                                         viewBox="0 0 16 16">
                                         <path
@@ -213,7 +208,7 @@
                                         <div class="base-options">
                                                  <!-- the part of the priorty on which we'll do filtr -->
                                                  <input required type="text" class="form-control mb-3"
-                                                          placeholder="The purpose of the visit:" />
+                                                          placeholder="Purpose of visit:" />
                                                  <h6 class="mb-2">Priority:</h6>
                                                  <div class="form-check form-check-inline mb-3">
                                                           <label>
@@ -282,7 +277,7 @@
                                                           placeholder="Age" />
                                         </div>
                                         <button class="w-100 btn btn-lg btn-primary mt-2 select-doctor-btn"
-                                                 type="submit">Create visit</button>
+                                                 type="submit">Submit</button>
                                </form>
                       </div>
              </div>
