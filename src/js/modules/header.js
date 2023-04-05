@@ -1,1 +1,1 @@
-console.log("hello2");
+console.log("test header.js подключен");
