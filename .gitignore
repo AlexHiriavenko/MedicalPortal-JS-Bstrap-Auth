@@ -2,11 +2,10 @@
 
 # dependencies
 /node_modules
-# /dist
+/dist
 
-gulp/version.json
 # /index.html
-# version.json
+version.json
 /.pnp
 .pnp.js
 # package-lock.json
