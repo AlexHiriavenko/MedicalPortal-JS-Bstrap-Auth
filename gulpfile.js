@@ -1,103 +1,54 @@
+// основной модуль, general module
 import gulp from "gulp";
-import dartSass from "sass";
-import gulpSass from "gulp-sass";
-import cleanCss from "gulp-clean-css";
-import rename from "gulp-rename";
-import concat from "gulp-concat";
-import clean from "gulp-clean";
-import browserSync from "browser-sync";
-import autoprefixer from "gulp-autoprefixer";
-import imagemin from "gulp-imagemin";
-import uglify from "gulp-uglify";
+// импорт путей, paths import
+import { path } from "./gulp/config/path.js";
+// импорт общих плагинов
+import { plugins } from "./gulp/config/plugins.js";
+// передача значений в глобальную переменную
+global.app = {
+    isProduct: process.argv.includes('--product'),
+    isDev: !process.argv.includes('--product'), 
+    path: path,
+    gulp: gulp,
+    plugins: plugins,
+ };
+ 
+ // импотры тасков
+// import { copy } from "./gulp/tasks/copy.js";
+import { clear } from "./gulp/tasks/clear.js";
+import { html } from "./gulp/tasks/html.js";
+import { server } from "./gulp/tasks/server.js";
+import { scss } from "./gulp/tasks/scss.js";
+import { js } from "./gulp/tasks/js.js";
+import { images } from "./gulp/tasks/images.js";
+// import { otfToTtf, ttfToWoff, fontsStyle } from "./gulp/tasks/fonts.js";
 
+ // функция наблюдатель, где
+ // watch(path, instruction) путь к файлам, инструкция выполнить функцию при изменении исходников.
+function watcher () {
+    // gulp.watch(path.watch.files, copy);
+    gulp.watch(path.watch.html, html);
+    gulp.watch(path.watch.scss, scss);
+    gulp.watch(path.watch.js, js);
+    gulp.watch(path.watch.images, images);
+}
 
-const sass = gulpSass(dartSass);
-browserSync.create();
+//Послідовна обробка шрифтів
+// const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle); // вариант со шрифтами
 
-const path = {
-  src: {
-    html: `./index.html`,
-    scss: `./src/style/*.scss`,
-    js: `./src/js/*.js`,
-    img: `./src/images/*`,
-  },
-  dist: {
-    self: `./dist`,
-    css: `./dist/css`,
-    js: `./dist`,
-    img: `./dist/images`,
-  },
-};
+// перечень тасков - выполняем параллельно (одновременно, асинхронно)
+const tasks = gulp.parallel(/* copy,*/ html, scss, js, images);
+// const tasks = gulp.series(fonts, gulp.parallel(/* copy,*/ html, scss, js, images)); // вариант со шрифтами
 
+// основной сценарий - выполняем последовательно очистить dist, запустить таски, и асинхронно наблюдатель + лайвсервер.
+const dev = gulp.series(clear, tasks, gulp.parallel(watcher, server));
+const product = gulp.series(clear, tasks );
+const delDist = gulp.series(clear);
 
-const cleanDist = () =>
-  gulp.src(path.dist.self, { allowEmpty: true }).pipe(clean());
+export { dev }
+export { product }
+export { delDist }
 
-const buildCss = () => {
-  return gulp
-    .src("./src/style/*.css")
-    .pipe(sass({ outputStyle: "expanded" }))
-    .pipe(cleanCss({ compatibility: "ie8" }))
-    .pipe(
-      rename({
-        suffix: ".min",
-        extname: ".css",
-      })
-    )
-    .pipe(
-      autoprefixer({
-        cascade: false,
-      })
-    )
-    .pipe(concat("style.scss"))
-    .pipe(rename("styles.min.css"))
-    .pipe(gulp.dest("./dist/css"))
-    .pipe(browserSync.stream());
-};
-
-const devCss = () =>
-  gulp
-    .src(path.src.scss)
-    .pipe(sass().on("error", sass.logError))
-    .pipe(rename("styles.min.css"))
-    .pipe(gulp.dest(path.dist.css))
-    .pipe(browserSync.stream());
-
-const buildJs = () =>
-  gulp
-    .src(path.src.js)
-    .pipe(concat("script.js"))
-    .pipe(rename("scripts.min.js"))
-    .pipe(uglify())
-    .pipe(gulp.dest(path.dist.js))
-    .pipe(browserSync.stream());
-
-const buildImages = () =>
-  gulp.src(path.src.img).pipe(imagemin()).pipe(gulp.dest(path.dist.img));
-
-const watcher = () => {
-  browserSync.init({
-    server: {
-      baseDir: "./",
-    },
-  });
-};
-
-gulp.watch("./index.html").on("change", browserSync.reload);
-gulp.watch(path.src.scss, devCss).on("change", browserSync.reload);
-gulp.watch(path.src.js, buildJs).on("change", browserSync.reload);
-gulp.watch(path.src.img, buildImages).on("change", browserSync.reload);
-
-gulp.task(
-  "build",
-  gulp.series(cleanDist, gulp.parallel(buildCss, buildJs, buildImages))
-);
-gulp.task(
-  "dev",
-  gulp.series(gulp.parallel(devCss, buildJs, buildImages), watcher)
-);
-
-
-
-
+// присваиваем dev - как задачу по умолчанию
+gulp.task('default', dev);
 
