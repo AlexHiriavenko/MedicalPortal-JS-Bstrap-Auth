@@ -1,7 +1,7 @@
 {
-  "name": "forkio",
+  "name": "medical-portal",
   "version": "1.0.0",
-  "description": "project forkio with adaptive design",
+  "description": "authorization. creating, editing, deleting cards. filtration. making changes to the server",
   "main": "gulpfile.js",
   "type": "module",
   "scripts": {
@@ -12,18 +12,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/ma_rch/project-forcio-teamwork"
+    "url": "git+https://gitlab.com/Prdrice/step-cards"
   },
   "keywords": [
     "forkio", "gulp", "scss", "adaptive", "media-queries", "ma_rch", "melnikviktor82", "oleksii.hriravenko"
   ],
-  "author": "ma_rch and melnikviktor82", 
+  "author": "ma_rch, melnikviktor82, Prdrice", 
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/ma_rch/project-forcio-teamwork",
+    "url": "https://gitlab.com/Prdrice/step-cards",
     "email": "martmarchmartmarch@gmail.com"
   },
-  "homepage": "https://gitlab.com/ma_rch/project-forcio-teamwork",
+  "homepage": "https://gitlab.com/Prdrice/step-cards",
   "devDependencies": {
     "browser-sync": "^2.27.11",
     "del": "^7.0.0",
