@@ -3,7 +3,8 @@
 # dependencies
 /node_modules
 # /dist
-
+version.json
+/gulp/version.json
 # /index.html
 # version.json
 /.pnp
