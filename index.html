@@ -14,78 +14,22 @@
 <!-- ЗДЕСЬ НИЧЕГО ПИСАТЬ НЕЛЬЗЯ! -->
 <body>  
 <div class="container-fluid">
-  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-2">
-      <a href="#"class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-        <img class="rounded float-start logo" height="40px"
-                  src="src/img/medicine-logo.png" alt="logo">
-        <h5 class="text-primary header__logo-title">allmedical</h5>
-      </a>
-      <div class="col-md-3 text-end">
-          <!-- Modal window added in login by data toggle and target -->
-          <button type="button"
-                    class="btn btn-outline-primary me-2 login__btn header__btn-login"
-                    data-bs-toggle="modal" data-bs-target="#modal-sign-in">Login
-          </button>
-          <!-- Modal window added in Create visit by data toggle and target -->
-          <button type="button" class="btn btn-primary header__btn-create-visit none"
-                    data-bs-toggle="modal" data-bs-target="#modal-create-visit">Create visit
-          </button>
-      </div>
-
-      <!-- Modal window of sign in  -->
-      <div id="modal-sign-in" class="modal fade text-center" tabindex="-1">
-          <!-- added modal window by id(that's important) -->
-          <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-header">
-                    <!-- the part with automatical close button -->
-                            <button type="button" class="btn-close"
-                                    data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                  </div>
-                  <!-- Modal window of sign in  -->
-                  <form id="signin">
-                      <div class="modal-body">
-                          <div class="form-signin w-100 m-auto">
-                              <img class="mb-4 justify-content-center"
-                                    src="src/img/medicine-logo.png"
-                                    alt="logo" width="72"
-                                    height="57" />
-                              <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-                              <div class="form-floating">
-                        <input id="input-email"
-                               name="email"
-                               type="email"
-                               class="form-control mb-3"
-                               placeholder="name@example.com"
-                               required />
-                        <label for="input-email">Email address</label>
-                </div>
-                <div class="form-floating">
-                    <input type="password"
-                              name="password"
-                              class="form-control mb-3"
-                              id="floatingPassword"
-                              placeholder="Password"
-                              required />
-                    <label
-                              for="floatingPassword">Password</label>
-                </div>
-                <div class="checkbox">
-                        <label> <input type="checkbox"
-                                      value="remember-me"
-                                      id="rememberme" />Remember me </label>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="modal-footer mb-2">
-                          <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-                      </div>
-                  </form>
-              </div>
-          </div>
-      </div>
-  </header>
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-2">
+        <a href="#" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+            <img class="rounded float-start logo" height="40px" src="src/img/medicine-logo.png" alt="logo">
+            <h5 class="text-primary header__logo-title">allmedical</h5>
+        </a>
+        <div class="col-md-3 text-end">
+            <!-- Modal window added in login by data toggle and target -->
+            <button type="button" class="btn btn-outline-primary me-2 login__btn header__btn-login"
+                data-bs-toggle="modal" data-bs-target="#modal-sign-in">Login
+            </button>
+            <!-- Modal window added in Create visit by data toggle and target -->
+            <button type="button" class="btn btn-primary header__btn-create-visit none" data-bs-toggle="modal"
+                data-bs-target="#modal-create-visit">Create visit
+            </button>
+        </div>
+    </header>
 </div>
 <nav class="navbar navbar-expand-lg bg-transparent">
     <div class="container-fluid">
@@ -147,34 +91,39 @@
     <!-- main section with background img and welcome text -->
     <div class="main_container">
              <h1 class="display-2 text-center main_title">WELCOME</h1>
-<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+<!-- <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     <div class="col">
       <div class="card h-100 bg-light">
         <div class="card-body">
           <h5 class="card-title">Patient: <span class="card-title patient-name"></span></h5>
           <p class="card-text">Doctor: <span class="card-text doctor-type"></span></p>
+          <p class="card-text d-none">Date:<span class="card-text doctor-type date"></span></p>
+          <p class="card-text d-none">Purpose: <span class="card-text doctor-type purpose"></span></p>
+          <p class="card-text d-none">Description: <span class="card-text doctor-type description"></span></p>
+          <p class="card-text d-none">Priority<span class="card-text doctor-type priority"></span></p>
+          <p class="card-text d-none">Status:<span class="card-text doctor-type status"></span></p>
         </div>
         <div class="card-footer d-flex justify-content-between align-items-center">
           <button class="btn btn-primary me-auto">Show More</button>
           <div class="btn-group" role="group">
             <button type="button" class="btn">
               <svg style="color: rgb(25, 27, 26);" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                class="post-edit" viewBox="0 0 16 16">
-                <path class="post-edit"
+                class="card-edit" viewBox="0 0 16 16">
+                <path class="card-edit"
                     d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"
                     fill="blue"></path>
-                <path class="post-edit" fill-rule="evenodd"
+                <path class="card-edit" fill-rule="evenodd"
                     d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"
                     fill="blue"></path>
               </svg>
             </button>
             <button type="button" class="btn">
               <svg style="color: black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                class="post-del" viewBox="0 0 16 16">
-                <path class="post-del"
+                class="card-del" viewBox="0 0 16 16">
+                <path class="card-del"
                     d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"
                     fill="red"></path>
-                <path class="post-del" fill-rule="evenodd"
+                <path class="card-del" fill-rule="evenodd"
                     d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
                     fill="red"></path>
             </svg>
@@ -194,22 +143,22 @@
           <div class="btn-group" role="group">
             <button type="button" class="btn ">
               <svg style="color: rgb(25, 27, 26);" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                class="post-edit" viewBox="0 0 16 16">
-                <path class="post-edit"
+                class="card-edit" viewBox="0 0 16 16">
+                <path class="card-edit"
                     d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"
                     fill="blue"></path>
-                <path class="post-edit" fill-rule="evenodd"
+                <path class="card-edit" fill-rule="evenodd"
                     d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"
                     fill="blue"></path>
               </svg>
             </button>
             <button type="button" class="btn">
               <svg style="color: black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                class="post-del" viewBox="0 0 16 16">
-                <path class="post-del"
+                class="card-del" viewBox="0 0 16 16">
+                <path class="card-del"
                     d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"
                     fill="red"></path>
-                <path class="post-del" fill-rule="evenodd"
+                <path class="card-del" fill-rule="evenodd"
                     d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
                     fill="red"></path>
             </svg>
@@ -229,22 +178,22 @@
           <div class="btn-group" role="group">
             <button type="button" class="btn">
               <svg style="color: rgb(25, 27, 26);" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                class="post-edit" viewBox="0 0 16 16">
-                <path class="post-edit"
+                class="card-edit" viewBox="0 0 16 16">
+                <path class="card-edit"
                     d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"
                     fill="blue"></path>
-                <path class="post-edit" fill-rule="evenodd"
+                <path class="card-edit" fill-rule="evenodd"
                     d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"
                     fill="blue"></path>
               </svg>
             </button>
             <button type="button" class="btn">
               <svg style="color: black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                class="post-del" viewBox="0 0 16 16">
-                <path class="post-del"
+                class="card-del" viewBox="0 0 16 16">
+                <path class="card-del"
                     d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"
                     fill="red"></path>
-                <path class="post-del" fill-rule="evenodd"
+                <path class="card-del" fill-rule="evenodd"
                     d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
                     fill="red"></path>
             </svg>
@@ -253,7 +202,7 @@
         </div>
       </div>
     </div>
-</div>
+</div> -->
              <!-- <p class="text-center main_text"> Welcome to our medical service! We are dedicated to
                       providing you with the
                       highest quality of care and personalized attention. Our team of experienced medical
@@ -281,115 +230,133 @@
     </div>
 </div>
 
-<!-- Modal window of create visit -->
-<div id="modal-create-visit" class="modal fade text-center modal-lg" tabindex="-1" role="dialog">
+<!-- Modal window of sign in  -->
+<div id="modal-sign-in" class="modal fade text-center" tabindex="-1">
     <!-- added modal window by id(that's important) -->
-    <div class="modal-dialog modal-dialog-scrollable">
-             <div class="modal-content">
-                      <div class="modal-header">
-                               <!-- svg on the modal window, look like a calendar -->
-                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                        fill="currentColor" class="bi bi-calendar-plus"
-                                        viewBox="0 0 16 16">
-                                        <path
-                                                 d="M8 7a.5.5 0 0 1 .5.5V9H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V10H6a.5.5 0 0 1 0-1h1.5V7.5A.5.5 0 0 1 8 7z" />
-                                        <path
-                                                 d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                               </svg>
-                               <h4 class="modal-header_title">Create visit</h4>
-                               <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                               <form>
-                                        <!-- the part of the select doctor on which we'll do filtr -->
-                                        <select class="form-select mb-3 select-doctors"
-                                                 aria-label="Default select example" required>
-                                                 <option selected>Choose a doctor:</option>
-                                                 <option value="cardiologist">Cardiologist</option>
-                                                 <option value="dentist">Dentist</option>
-                                                 <option value="therapist">Therapist</option>
-                                        </select>
-                                        <div class="base-options">
-                                                 <!-- the part of the priorty on which we'll do filtr -->
-                                                 <input required type="text" class="form-control mb-3"
-                                                          placeholder="The purpose of the visit:" />
-                                                 <h6 class="mb-2">Priority:</h6>
-                                                 <div class="form-check form-check-inline mb-3">
-                                                          <label>
-                                                                   High
-                                                                   <input checked class="form-check-input"
-                                                                            type="radio"
-                                                                            name="Priority" />
-                                                          </label>
-                                                 </div>
-                                                 <div class="form-check form-check-inline mb-3">
-                                                          <label>
-                                                                   Normal
-                                                                   <input class="form-check-input"
-                                                                            type="radio"
-                                                                            name="Priority" />
-                                                          </label>
-                                                 </div>
-                                                 <div class="form-check form-check-inline mb-3">
-                                                          <label>
-                                                                   Low
-                                                                   <input class="form-check-input"
-                                                                            type="radio"
-                                                                            name="Priority" />
-                                                          </label>
-                                                 </div>
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Name of the patient" />
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Phone number" />
-                                                 <select class="form-select mb-3 select-dates"
-                                                          aria-label="Default select example" required>
-                                                          <option selected>Choose day:</option>
-                                                          <option value="01">Monday</option>
-                                                          <option value="02">Tuesday</option>
-                                                          <option value="03">Wednesday</option>
-                                                          <option value="04">Thursday</option>
-                                                          <option value="05">Friday</option>
-                                                 </select>
-                                                 <select class="form-select mb-3 select-hours"
-                                                          aria-label="Default select example" required>
-                                                          <option selected>Choose time:</option>
-                                                          <option value="08">08:00</option>
-                                                          <option value="09">09:00</option>
-                                                          <option value="10">10:00</option>
-                                                          <option value="11">11:00</option>
-                                                          <option value="12">12:00</option>
-                                                          <option value="13">13:00</option>
-                                                 </select>
-                                        </div>
-                                        <div class="cardiologist-options">
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Typical pressure" />
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Body mass index" />
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Description" />
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Age" />
-                                        </div>
-                                        <div class="dentist-options">
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Date of last visit" />
-                                        </div>
-                                        <div class="therapist-options">
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Age" />
-                                        </div>
-                                        <button class="w-100 btn btn-lg btn-primary mt-2 select-doctor-btn"
-                                                 type="submit">Create visit</button>
-                               </form>
-                      </div>
-             </div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- the part with automatical close button -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- Modal window of sign in  -->
+            <form id="signin">
+                <div class="modal-body">
+                    <div class="form-signin w-100 m-auto">
+                        <img class="mb-4 justify-content-center" src="src/img/medicine-logo.png" alt="logo" width="72"
+                            height="57" />
+                        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+                        <div class="form-floating">
+                            <input id="input-email" name="email" type="email" class="form-control mb-3"
+                                placeholder="name@example.com" required />
+                            <label for="input-email">Email address</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" name="password" class="form-control mb-3" id="floatingPassword"
+                                placeholder="Password" required />
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                        <div class="checkbox">
+                            <label> <input type="checkbox" value="remember-me" id="rememberme" /> <span>Remember
+                                    me</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer mb-2">
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
 
+<!-- Modal window of create visit -->
+<div id="modal-create-visit" class="modal fade text-center modal-lg" tabindex="-1" role="dialog">
+    <!-- added modal window by id(that's important) -->
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- svg on the modal window, look like a calendar -->
+                <svg class="modal-header_svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-calendar-plus" viewBox="0 0 16 16">
+                    <path
+                        d="M8 7a.5.5 0 0 1 .5.5V9H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V10H6a.5.5 0 0 1 0-1h1.5V7.5A.5.5 0 0 1 8 7z" />
+                    <path
+                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                </svg>
+                <h4 class="modal-header_title">Create visit</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <!-- the part of the select doctor on which we'll do filtr -->
+                    <select class="form-select mb-3 select-doctors" aria-label="Default select example" required>
+                        <option selected>Choose a doctor:</option>
+                        <option value="cardiologist">Cardiologist</option>
+                        <option value="dentist">Dentist</option>
+                        <option value="therapist">Therapist</option>
+                    </select>
+                    <div class="base-options">
+                        <!-- the part of the priorty on which we'll do filtr -->
+                        <input required type="text" class="form-control mb-3" placeholder="Purpose of visit:" />
+                        <h6 class="mb-2">Priority:</h6>
+                        <div class="form-check form-check-inline mb-3">
+                            <label>
+                                High
+                                <input checked class="form-check-input" type="radio" name="Priority" />
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline mb-3">
+                            <label>
+                                Normal
+                                <input class="form-check-input" type="radio" name="Priority" />
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline mb-3">
+                            <label>
+                                Low
+                                <input class="form-check-input" type="radio" name="Priority" />
+                            </label>
+                        </div>
+                        <input required class="form-control mb-3" type="text" placeholder="Name surname" />
+                        <input required class="form-control mb-3" type="text" placeholder="Phone number" />
+                        <select class="form-select mb-3 select-dates" aria-label="Default select example" required>
+                            <option selected>Choose day:</option>
+                            <option value="01">Monday</option>
+                            <option value="02">Tuesday</option>
+                            <option value="03">Wednesday</option>
+                            <option value="04">Thursday</option>
+                            <option value="05">Friday</option>
+                        </select>
+                        <select class="form-select mb-3 select-hours" aria-label="Default select example" required>
+                            <option selected>Choose time:</option>
+                            <option value="08">08:00</option>
+                            <option value="09">09:00</option>
+                            <option value="10">10:00</option>
+                            <option value="11">11:00</option>
+                            <option value="12">12:00</option>
+                            <option value="13">13:00</option>
+                        </select>
+                    </div>
+                    <div class="cardiologist-options">
+                        <input required class="form-control mb-3" type="text" placeholder="Typical pressure" />
+                        <input required class="form-control mb-3" type="text" placeholder="Body mass index" />
+                        <input required class="form-control mb-3" type="text" placeholder="Description" />
+                        <input required class="form-control mb-3" type="text" placeholder="Age" />
+                    </div>
+                    <div class="dentist-options">
+                        <input required class="form-control mb-3" type="text" placeholder="Date of last visit" />
+                    </div>
+                    <div class="therapist-options">
+                        <input required class="form-control mb-3" type="text" placeholder="Age" />
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary mt-2 select-doctor-btn" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <h2 class="display-2 text-center no-cards d-none">No items have been added</h2>
 <section class="container-filter m-3"></section>
 <section class="container-cards m-3 cards"></section>

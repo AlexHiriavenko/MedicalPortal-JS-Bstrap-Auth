@@ -1,108 +1,127 @@
+<!-- Modal window of sign in  -->
+<div id="modal-sign-in" class="modal fade text-center" tabindex="-1">
+    <!-- added modal window by id(that's important) -->
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- the part with automatical close button -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- Modal window of sign in  -->
+            <form id="signin">
+                <div class="modal-body">
+                    <div class="form-signin w-100 m-auto">
+                        <img class="mb-4 justify-content-center" src="src/img/medicine-logo.png" alt="logo" width="72"
+                            height="57" />
+                        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+                        <div class="form-floating">
+                            <input id="input-email" name="email" type="email" class="form-control mb-3"
+                                placeholder="name@example.com" required />
+                            <label for="input-email">Email address</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" name="password" class="form-control mb-3" id="floatingPassword"
+                                placeholder="Password" required />
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                        <div class="checkbox">
+                            <label> <input type="checkbox" value="remember-me" id="rememberme" /> <span>Remember
+                                    me</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer mb-2">
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
 <!-- Modal window of create visit -->
 <div id="modal-create-visit" class="modal fade text-center modal-lg" tabindex="-1" role="dialog">
     <!-- added modal window by id(that's important) -->
     <div class="modal-dialog modal-dialog-scrollable">
-             <div class="modal-content">
-                      <div class="modal-header">
-                               <!-- svg on the modal window, look like a calendar -->
-                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                        fill="currentColor" class="bi bi-calendar-plus"
-                                        viewBox="0 0 16 16">
-                                        <path
-                                                 d="M8 7a.5.5 0 0 1 .5.5V9H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V10H6a.5.5 0 0 1 0-1h1.5V7.5A.5.5 0 0 1 8 7z" />
-                                        <path
-                                                 d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                               </svg>
-                               <h4 class="modal-header_title">Create visit</h4>
-                               <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                               <form>
-                                        <!-- the part of the select doctor on which we'll do filtr -->
-                                        <select class="form-select mb-3 select-doctors"
-                                                 aria-label="Default select example" required>
-                                                 <option selected>Choose a doctor:</option>
-                                                 <option value="cardiologist">Cardiologist</option>
-                                                 <option value="dentist">Dentist</option>
-                                                 <option value="therapist">Therapist</option>
-                                        </select>
-                                        <div class="base-options">
-                                                 <!-- the part of the priorty on which we'll do filtr -->
-                                                 <input required type="text" class="form-control mb-3"
-                                                          placeholder="The purpose of the visit:" />
-                                                 <h6 class="mb-2">Priority:</h6>
-                                                 <div class="form-check form-check-inline mb-3">
-                                                          <label>
-                                                                   High
-                                                                   <input checked class="form-check-input"
-                                                                            type="radio"
-                                                                            name="Priority" />
-                                                          </label>
-                                                 </div>
-                                                 <div class="form-check form-check-inline mb-3">
-                                                          <label>
-                                                                   Normal
-                                                                   <input class="form-check-input"
-                                                                            type="radio"
-                                                                            name="Priority" />
-                                                          </label>
-                                                 </div>
-                                                 <div class="form-check form-check-inline mb-3">
-                                                          <label>
-                                                                   Low
-                                                                   <input class="form-check-input"
-                                                                            type="radio"
-                                                                            name="Priority" />
-                                                          </label>
-                                                 </div>
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Name of the patient" />
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Phone number" />
-                                                 <select class="form-select mb-3 select-dates"
-                                                          aria-label="Default select example" required>
-                                                          <option selected>Choose day:</option>
-                                                          <option value="01">Monday</option>
-                                                          <option value="02">Tuesday</option>
-                                                          <option value="03">Wednesday</option>
-                                                          <option value="04">Thursday</option>
-                                                          <option value="05">Friday</option>
-                                                 </select>
-                                                 <select class="form-select mb-3 select-hours"
-                                                          aria-label="Default select example" required>
-                                                          <option selected>Choose time:</option>
-                                                          <option value="08">08:00</option>
-                                                          <option value="09">09:00</option>
-                                                          <option value="10">10:00</option>
-                                                          <option value="11">11:00</option>
-                                                          <option value="12">12:00</option>
-                                                          <option value="13">13:00</option>
-                                                 </select>
-                                        </div>
-                                        <div class="cardiologist-options">
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Typical pressure" />
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Body mass index" />
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Description" />
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Age" />
-                                        </div>
-                                        <div class="dentist-options">
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Date of last visit" />
-                                        </div>
-                                        <div class="therapist-options">
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Age" />
-                                        </div>
-                                        <button class="w-100 btn btn-lg btn-primary mt-2 select-doctor-btn"
-                                                 type="submit">Create visit</button>
-                               </form>
-                      </div>
-             </div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- svg on the modal window, look like a calendar -->
+                <svg class="modal-header_svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-calendar-plus" viewBox="0 0 16 16">
+                    <path
+                        d="M8 7a.5.5 0 0 1 .5.5V9H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V10H6a.5.5 0 0 1 0-1h1.5V7.5A.5.5 0 0 1 8 7z" />
+                    <path
+                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                </svg>
+                <h4 class="modal-header_title">Create visit</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <!-- the part of the select doctor on which we'll do filtr -->
+                    <select class="form-select mb-3 select-doctors" aria-label="Default select example" required>
+                        <option selected>Choose a doctor:</option>
+                        <option value="cardiologist">Cardiologist</option>
+                        <option value="dentist">Dentist</option>
+                        <option value="therapist">Therapist</option>
+                    </select>
+                    <div class="base-options">
+                        <!-- the part of the priorty on which we'll do filtr -->
+                        <input required type="text" class="form-control mb-3" placeholder="Purpose of visit:" />
+                        <h6 class="mb-2">Priority:</h6>
+                        <div class="form-check form-check-inline mb-3">
+                            <label>
+                                High
+                                <input checked class="form-check-input" type="radio" name="Priority" />
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline mb-3">
+                            <label>
+                                Normal
+                                <input class="form-check-input" type="radio" name="Priority" />
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline mb-3">
+                            <label>
+                                Low
+                                <input class="form-check-input" type="radio" name="Priority" />
+                            </label>
+                        </div>
+                        <input required class="form-control mb-3" type="text" placeholder="Name surname" />
+                        <input required class="form-control mb-3" type="text" placeholder="Phone number" />
+                        <select class="form-select mb-3 select-dates" aria-label="Default select example" required>
+                            <option selected>Choose day:</option>
+                            <option value="01">Monday</option>
+                            <option value="02">Tuesday</option>
+                            <option value="03">Wednesday</option>
+                            <option value="04">Thursday</option>
+                            <option value="05">Friday</option>
+                        </select>
+                        <select class="form-select mb-3 select-hours" aria-label="Default select example" required>
+                            <option selected>Choose time:</option>
+                            <option value="08">08:00</option>
+                            <option value="09">09:00</option>
+                            <option value="10">10:00</option>
+                            <option value="11">11:00</option>
+                            <option value="12">12:00</option>
+                            <option value="13">13:00</option>
+                        </select>
+                    </div>
+                    <div class="cardiologist-options">
+                        <input required class="form-control mb-3" type="text" placeholder="Typical pressure" />
+                        <input required class="form-control mb-3" type="text" placeholder="Body mass index" />
+                        <input required class="form-control mb-3" type="text" placeholder="Description" />
+                        <input required class="form-control mb-3" type="text" placeholder="Age" />
+                    </div>
+                    <div class="dentist-options">
+                        <input required class="form-control mb-3" type="text" placeholder="Date of last visit" />
+                    </div>
+                    <div class="therapist-options">
+                        <input required class="form-control mb-3" type="text" placeholder="Age" />
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary mt-2 select-doctor-btn" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
-
