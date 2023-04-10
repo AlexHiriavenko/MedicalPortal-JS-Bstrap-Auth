@@ -1,6 +1,6 @@
 export default class Requests {
   tokenRequest({ email, password }) {
-    fetch("https://ajax.test-danit.com/api/v2/cards/login", {
+    return fetch("https://ajax.test-danit.com/api/v2/cards/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -10,7 +10,7 @@ export default class Requests {
   }
 
   getCards(token) {
-    fetch(`https://ajax.test-danit.com/api/v2/cards`, {
+    return fetch(`https://ajax.test-danit.com/api/v2/cards`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -19,53 +19,29 @@ export default class Requests {
   }
 
   createCard(token, objForm) {
-    fetch("https://ajax.test-danit.com/api/v2/cards", {
+    return fetch("https://ajax.test-danit.com/api/v2/cards", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({
-        name: objForm.name,
-        doctor: objForm.doctor,
-        purpose: objForm.purpose,
-        description: objForm.description,
-        priority: objForm.priority,
-
-        pressure: objForm.pressure,
-        bodyMassIndex: objForm.bodyMassIndex,
-        diseasesOfHeart: objForm.diseasesOfHeart,
-        age: objForm.age,
-        lastVisit: objForm.lastVisit,
-      }),
+      body: JSON.stringify(objForm),
     }).then((response) => response.json());
   }
 
   editCard(token, cardId, objForm) {
-    fetch(`https://ajax.test-danit.com/api/v2/cards/${cardId}`, {
+    return fetch(`https://ajax.test-danit.com/api/v2/cards/${cardId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({
-        name: objForm.name,
-        doctor: objForm.doctor,
-        purpose: objForm.purpose,
-        description: objForm.description,
-        priority: objForm.priority,
-
-        pressure: objForm.pressure,
-        bodyMassIndex: objForm.bodyMassIndex,
-        diseasesOfHeart: objForm.diseasesOfHeart,
-        age: objForm.age,
-        lastVisit: objForm.lastVisit,
-      }),
+      body: JSON.stringify(objForm),
     }).then((response) => response.json());
   }
 
   deleteCard(token, cardId) {
-    fetch(`https://ajax.test-danit.com/api/v2/cards/${cardId}`, {
+    return fetch(`https://ajax.test-danit.com/api/v2/cards/${cardId}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -73,3 +49,4 @@ export default class Requests {
     }).then((response) => response);
   }
 }
+
