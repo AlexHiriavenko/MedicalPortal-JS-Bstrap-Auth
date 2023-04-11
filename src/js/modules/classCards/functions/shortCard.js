@@ -11,7 +11,7 @@ export function shortCard(cardObj) {
   <div class="card-footer d-flex justify-content-between align-items-center">
     <button class="btn btn-primary me-auto show-more">Show More</button>
     <div class="btn-group" role="group">
-      <button type="button" class="btn card-edit">
+      <button type="button" class="btn card-edit" data-bs-toggle="modal" data-bs-target="#modal-create-visit">
         <svg style="color: rgb(25, 27, 26);" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
           class="card-edit" viewBox="0 0 16 16">
           <path class="card-edit"

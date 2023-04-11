@@ -1,7 +1,8 @@
+import Requests from "../classRequests/Requests.js";
 import { shortCard } from "./functions/shortCard.js";
 import { onDelete } from "./functions/onDelete.js";
 import { onShowMore } from "./functions/onShowMore.js";
-import Requests from "../classRequests/Requests.js";
+import { onEdit } from "./functions/onEdit.js";
 import { fullContent } from "./functions/FullContent.js";
 import { messageEmptyCards } from "./functions/messageEmptyCards.js";
 
@@ -71,6 +72,16 @@ class VisitCards {
                 btnShowMore.addEventListener("click", onShowMore);
             });
         }
+        return cardsArray;
+    }
+
+    async editCard(cardsArray) {
+        if (cardsArray) {
+            const cards = await cardsArray.forEach((card) => {
+                const btnEdit = card.querySelector(".card-edit");
+                btnEdit.addEventListener("click", onEdit)
+            })
+        }    
     }
 }
 
@@ -106,8 +117,8 @@ const visitCards = new VisitCards();
 visitCards
     .showCards(h1, cardsRequests)
     .then((cardsArray) => visitCards.deleteCard(cardsArray))
-    .then((cardsArray) => visitCards.showMore(cardsArray));
-// .then(cardsArray)
+    .then((cardsArray) => visitCards.showMore(cardsArray))
+    .then((cardsArray) => visitCards.editCard(cardsArray))
 
 // export const token = "0360ffe9-0bf3-4ef0-ac36-247faebc6cd4";  // token Viktor
 // const email = "martmarchmartmarch@gmail.com";
