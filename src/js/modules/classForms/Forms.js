@@ -1,6 +1,3 @@
-// import Requests from "../classRequests/Requests";
-
-// определяем класс формы
 
 class Form {
   constructor() {
