@@ -7,7 +7,7 @@ import { fullContent } from "./functions/FullContent.js";
 import { messageEmptyCards } from "./functions/messageEmptyCards.js";
 
 export const cardsRequests = new Requests();
-export const token = "5317fccb-f768-4268-8fa2-625878d56919"; // my token
+// export const token = "5317fccb-f768-4268-8fa2-625878d56919"; // my token
 export const h1 = document.querySelector("h1.display-2.text-center.main_title");
 
 const testCardObj = {
@@ -25,7 +25,7 @@ const testCardObj = {
 class VisitCards {
     constructor() {}
 
-    async showCards(parent, requests) {
+    async showCards(parent, requests, token) {
         const cardsSection = document.createElement("section");
         const classesCards = [
             "cards",
@@ -56,11 +56,11 @@ class VisitCards {
         }
     }
 
-    async deleteCard(cardsArray) {
+    async deleteCard(cardsArray, token) {
         if (cardsArray) {
             const cards = await cardsArray.forEach((card) => {
                 const btnDel = card.querySelector(".card-del");
-                btnDel.addEventListener("click", onDelete);
+                btnDel.addEventListener("click", onDelete(token));
             });
             return cardsArray;
         }
@@ -76,15 +76,26 @@ class VisitCards {
         return cardsArray;
     }
 
-    async editCard(cardsArray) {
+    async editCard(cardsArray, token) {
         if (cardsArray) {
             const cards = await cardsArray.forEach((card) => {
                 const btnEdit = card.querySelector(".btn.card-edit");
-                btnEdit.addEventListener("click", onEdit);
+                btnEdit.addEventListener("click", onEdit(token));
             });
         }
     }
 }
+
+const visitCards = new VisitCards();
+
+export function showAllCards(token) {
+    return visitCards
+        .showCards(h1, cardsRequests, token)
+        .then((cardsArray) => visitCards.deleteCard(cardsArray, token))
+        .then((cardsArray) => visitCards.showMore(cardsArray))
+        .then((cardsArray) => visitCards.editCard(cardsArray, token))
+}
+
 
 function getToken() {
     return fetch("https://ajax.test-danit.com/api/v2/cards/login", {
@@ -113,13 +124,6 @@ function createCard(token) {
 
 // createCard(token); // каждое обновление страницы - это один запуск + 1 карточка
 
-const visitCards = new VisitCards();
-
-// visitCards
-//     .showCards(h1, cardsRequests)
-//     .then((cardsArray) => visitCards.deleteCard(cardsArray))
-//     .then((cardsArray) => visitCards.showMore(cardsArray))
-//     .then((cardsArray) => visitCards.editCard(cardsArray));
 
 // export const token = "0360ffe9-0bf3-4ef0-ac36-247faebc6cd4";  // token Viktor
 // const email = "martmarchmartmarch@gmail.com";
