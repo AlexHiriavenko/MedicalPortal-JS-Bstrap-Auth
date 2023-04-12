@@ -18,16 +18,25 @@ export default class ModalLogin extends Modal {
 
         try {
         const request = new Requests();
-        const token = await request.tokenRequest(this.emailInput.value, this.passwordInput.value);
-        if (token !== undefined) {
+        const tokenRequest = await request.tokenRequest(this.emailInput.value, this.passwordInput.value);
+        if (tokenRequest.ok) {
+
+            const token = await tokenRequest.text();
             localStorage.setItem("token", token);
+            localStorage.setItem("email", this.emailInput.value);
+            localStorage.setItem("password", this.passwordInput.value);
+            localStorage.setItem("autoLogIn", true);
+    
             const btnCloseModal = document.querySelector("#btn-close-modal")
             await btnCloseModal.click();
             const logInBtn = document.querySelector(".header__btn-login");
             logInBtn.classList.add("d-none");
             const createVisitBtn = document.querySelector(".header__btn-create-visit");
-            createVisitBtn.classList.add("d-block");
-            createVisitBtn.classList.remove("d-none");
+            createVisitBtn.classList.replace("d-none", "d-block");
+        } else {
+            throw new Error(
+                `Error ${tokenRequest.status}: Incorrect username or password`
+              );
         }}
         catch (error) {
             alert(error.message);
@@ -42,3 +51,18 @@ export default class ModalLogin extends Modal {
 
 const modalLogin = new ModalLogin ( "modal-sign-in"); 
 document.body.prepend(modalLogin.renderModal(modalLogin.renderModalLoginContent()));
+
+
+
+window.onload = function () {
+    if (localStorage.getItem("autoLogIn")) {
+      const email = document.querySelector("#input-email");
+      const password = document.querySelector("#floatingPassword");
+      email.value = localStorage.getItem("email");
+      password.value = localStorage.getItem("password");
+      autoClick("submit");
+    }
+  };
+  
+  const autoClick = (id) => document.getElementById(`${id}`).click();
+  

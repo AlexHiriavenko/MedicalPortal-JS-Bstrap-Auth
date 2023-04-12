@@ -39,6 +39,3 @@ export default class Modal {
 
     };
 };
-
-// const modal = new Modal ( "modal-sign-in"); 
-// document.body.prepend(modal.renderModal());

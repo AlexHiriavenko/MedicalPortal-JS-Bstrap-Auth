@@ -10,6 +10,7 @@ export default class Forms {
             this.form.setAttribute("id", this.formId);
     
             const submitButtonElement = document.createElement('button');
+            submitButtonElement.id = 'submit';
             submitButtonElement.type = 'submit';
             submitButtonElement.classList.add('btn', 'btn-lg', 'btn-primary', 'w-100');
             submitButtonElement.innerText = this.submitButtonName;
@@ -20,4 +21,4 @@ export default class Forms {
     
             return this.form
         }
-    }
+    };
