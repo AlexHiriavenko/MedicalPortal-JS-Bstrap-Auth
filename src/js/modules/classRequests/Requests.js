@@ -1,5 +1,5 @@
 export default class Requests {
-  tokenRequest({ email, password }) {
+  tokenRequest(email, password) {
     return fetch("https://ajax.test-danit.com/api/v2/cards/login", {
       method: "POST",
       headers: {
