@@ -115,11 +115,11 @@ function createCard(token) {
 
 const visitCards = new VisitCards();
 
-visitCards
-    .showCards(h1, cardsRequests)
-    .then((cardsArray) => visitCards.deleteCard(cardsArray))
-    .then((cardsArray) => visitCards.showMore(cardsArray))
-    .then((cardsArray) => visitCards.editCard(cardsArray));
+// visitCards
+//     .showCards(h1, cardsRequests)
+//     .then((cardsArray) => visitCards.deleteCard(cardsArray))
+//     .then((cardsArray) => visitCards.showMore(cardsArray))
+//     .then((cardsArray) => visitCards.editCard(cardsArray));
 
 // export const token = "0360ffe9-0bf3-4ef0-ac36-247faebc6cd4";  // token Viktor
 // const email = "martmarchmartmarch@gmail.com";
