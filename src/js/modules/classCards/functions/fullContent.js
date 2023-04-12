@@ -24,8 +24,12 @@ export function fullContent(cardObj, parent) {
                 "<strong>" +
                 key[0].toUpperCase() +
                 key.slice(1) +
-                ":</strong> " +
-                cardObj[camelKey];
+                ":</strong> <span data-" +
+                camelKey +
+                "></span>";
             parent.append(p);
+            p.classList.add("card-text");
+            const span = p.querySelector(`span[data-${camelKey}]`);
+            span.textContent = cardObj[camelKey];
         });
 }

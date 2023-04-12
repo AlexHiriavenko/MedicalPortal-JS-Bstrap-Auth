@@ -18,7 +18,8 @@ const testCardObj = {
     priority: "high",
     visitDate: "2023-04-08",
     status: "done",
-    lastVisit: "2023-03-08", // заполняется именно ДЛЯ стоматолога
+    lastVisit: "2023-03-08",
+    phone: "+380991234567",
 };
 
 class VisitCards {
@@ -78,10 +79,10 @@ class VisitCards {
     async editCard(cardsArray) {
         if (cardsArray) {
             const cards = await cardsArray.forEach((card) => {
-                const btnEdit = card.querySelector(".card-edit");
-                btnEdit.addEventListener("click", onEdit)
-            })
-        }    
+                const btnEdit = card.querySelector(".btn.card-edit");
+                btnEdit.addEventListener("click", onEdit);
+            });
+        }
     }
 }
 
@@ -118,7 +119,7 @@ visitCards
     .showCards(h1, cardsRequests)
     .then((cardsArray) => visitCards.deleteCard(cardsArray))
     .then((cardsArray) => visitCards.showMore(cardsArray))
-    .then((cardsArray) => visitCards.editCard(cardsArray))
+    .then((cardsArray) => visitCards.editCard(cardsArray));
 
 // export const token = "0360ffe9-0bf3-4ef0-ac36-247faebc6cd4";  // token Viktor
 // const email = "martmarchmartmarch@gmail.com";

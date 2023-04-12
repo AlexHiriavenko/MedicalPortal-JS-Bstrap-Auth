@@ -4,8 +4,8 @@ export function shortCard(cardObj) {
 <div id="${id}" class="card h-100 bg-light" data-doctor="${doctor}" data-status="${status}" data-priority="${priority}">
   <div class="card-body">
     <h5 class="card-title text-center bg-dark text-light">Visit: <span class="card-title">${id}</span></h5>
-    <p class="card-text"><strong>Patient: </strong><span class="card-text patient-name">${name}</span></p>
-    <p class="card-text"><strong>Doctor: </strong><span class="card-text doctor-type">${doctor}</span></p>
+    <p class="card-text"><strong>Patient: </strong><span class="card-text" data-name="${name}">${name}</span></p>
+    <p class="card-text"><strong>Doctor: </strong><span class="card-text" data-doctor="${doctor}">${doctor}</span></p>
     <div class="full-content d-none"></div>
   </div>
   <div class="card-footer d-flex justify-content-between align-items-center">
