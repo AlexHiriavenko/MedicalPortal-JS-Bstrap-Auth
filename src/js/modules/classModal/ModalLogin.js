@@ -33,6 +33,8 @@ export default class ModalLogin extends Modal {
             logInBtn.classList.add("d-none");
             const createVisitBtn = document.querySelector(".header__btn-create-visit");
             createVisitBtn.classList.replace("d-none", "d-block");
+            const cardsFilterForm = document.querySelector("#cardsFilter");
+            cardsFilterForm.classList.replace("d-none", "d-block");
         } else {
             throw new Error(
                 `Error ${tokenRequest.status}: Incorrect username or password`

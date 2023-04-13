@@ -5,16 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="src/img/medicine-logo.png" type="image/icon">
-    <title>project medical Portal</title>
+    <title>Step3</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
              integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
              crossorigin="anonymous">
     <link rel="stylesheet" href="./dist/css/styles.min.css">
 </head>
 <!-- ЗДЕСЬ НИЧЕГО ПИСАТЬ НЕЛЬЗЯ! -->
+
 <body>  
 <div class="container-fluid">
-  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-2">
+  <header class="d-flex flex-wrap align-items-center justify-content-between justify-content-md-between py-3 mb-2">
       <a href="#"class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
         <img class="rounded float-start logo" height="40px"
                   src="src/img/medicine-logo.png" alt="logo">
@@ -33,94 +34,79 @@
       </div> 
   </header>
 </div>
-<!-- filtr section under the header, we should added css classes -->
-<div class="container-fluid background_img">
-    <nav class="navbar navbar-expand-lg bg-transparent">
-             <div class="container-fluid">
-                      <h2>Visits filter:</h2>
-                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                               data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-                               aria-expanded="false" aria-label="Toggle navigation">
-                               <span class="navbar-toggler-icon"></span>
-                      </button>
-                      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                               <ul class="navbar-nav">
-                                        <li class="nav-item dropdown nav-item_filtr">
-                                                 <a class="nav-link dropdown-toggle" href="#"
-                                                          role="button" data-bs-toggle="dropdown"
-                                                          aria-expanded="false">Departments</a>
-                                                 <ul class="dropdown-menu">
-                                                          <li><a class="dropdown-item"
-                                                                            href="#">Cardiology</a></li>
-                                                          <li><a class="dropdown-item"
-                                                                            href="#">Dentistry</a></li>
-                                                          <li><a class="dropdown-item"
-                                                                            href="#">Therapy</a></li>
-                                                 </ul>
-                                        </li>
-                                        <li class="nav-item dropdown nav-item_filtr">
-                                                 <a class="nav-link dropdown-toggle" href="#"
-                                                          role="button" data-bs-toggle="dropdown"
-                                                          aria-expanded="false">
-                                                          Priority
-                                                 </a>
-                                                 <ul class="dropdown-menu">
-                                                          <li><a class="dropdown-item" href="#">High</a>
-                                                          </li>
-                                                          <li><a class="dropdown-item" href="#">Normal</a>
-                                                          </li>
-                                                          <li><a class="dropdown-item" href="#">Low</a>
-                                                          </li>
-                                                 </ul>
-                                        </li>
-                                        <li class="nav-item dropdown nav-item_filtr">
-                                                 <a class="nav-link dropdown-toggle" href="#"
-                                                          role="button" data-bs-toggle="dropdown"
-                                                          aria-expanded="false">
-                                                          Status
-                                                 </a>
-                                                 <ul class="dropdown-menu">
-                                                          <li><a class="dropdown-item" href="#">Opened</a>
-                                                          </li>
-                                                          <li><a class="dropdown-item" href="#">Closed</a>
-                                                          </li>
-                                                 </ul>
-                                        </li>
-                               </ul>
-                      </div>
+
+<nav id="cardsFilter" class="navbar navbar-expand-lg bg-transparent d-none">
+    <div class="container-fluid d-flex justify-content-center align-items-end">
+        <h2 class="me-3 mb-0"><img height="32" width="32" src="src/img/filter_icon.png" alt="logo"> Visits filter:</h2>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                      aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <form class="d-flex justify-content-center align-items-end"> 
+                    <div class="form-group me-3">
+                      <label for="searchInput" class="mr-2"></label>
+                      <input type="text" class="form-control" id="searchInput" placeholder="Enter purpose visit">
+                    </div>
+                    <div class="form-group me-3">
+                      <label for="select1" class="mr-2"></label>
+                      <select class="form-control" id="selectStatus">
+                        <option>Status:</option>
+                        <option>Open</option>
+                        <option>Done</option>
+                      </select>
+                    </div>
+                    <div class="form-group me-3">
+                      <label for="select2" class="mr-2"></label>
+                      <select class="form-control" id="select2">
+                        <option>Priority:</option>
+                        <option>High</option>
+                        <option>Normal</option>
+                        <option>Low</option>
+                      </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                  </form>   
              </div>
-    </nav>
-
-    <!-- main section with background img and welcome text -->
-    <div class="main_container">
-             <h1 class="display-2 text-center main_title">WELCOME</h1>
-             <p class="text-left main_text"> Welcome to our medical service! We are dedicated to
-                      providing you with the
-                      highest quality of care and personalized attention. Our team of experienced medical
-                      professionals is committed to
-                      ensuring your health and well-being.</p>
-
-             <p class="text-left main_text">Whether you're seeking routine check-ups, specialized
-                      treatments, or emergency care, we are
-                      here to meet your medical needs. Our state-of-the-art facilities are equipped with
-                      the latest
-                      technologies and tools to help diagnose and treat a wide range of medical
-                      conditions.</p>
-
-             <p class="text-left main_text">At our medical service, we understand that each patient is
-                      unique, and we take the time to
-                      listen to your concerns and provide individualized care. Our compassionate and
-                      knowledgeable
-                      staff is here to guide you through every step of your healthcare journey, from
-                      diagnosis to
-                      recovery.</p>
-
-             <p class="text-left main_text">Thank you for choosing our medical service for your
-                      healthcare needs. We look forward to
-                      serving you and your family with the highest level of care and expertise.</p>
     </div>
-</div>
+</nav>
 
+<div class="container-fluid background_img">
+  <!-- main section with background img and welcome text -->
+  <div class="main_container">
+    <h1 class="display-2 text-center main_title">WELCOME</h1>
+    <div id="text-container">
+      <p class="text-center main_text">
+        Welcome to our medical service! We are dedicated to providing you with
+        the highest quality of care and personalized attention. Our team of
+        experienced medical professionals is committed to ensuring your health
+        and well-being.
+      </p>
+
+      <p class="text-center main_text">
+        Whether you're seeking routine check-ups, specialized treatments, or
+        emergency care, we are here to meet your medical needs. Our
+        state-of-the-art facilities are equipped with the latest technologies
+        and tools to help diagnose and treat a wide range of medical conditions.
+      </p>
+
+      <p class="text-center main_text">
+        At our medical service, we understand that each patient is unique, and
+        we take the time to listen to your concerns and provide individualized
+        care. Our compassionate and knowledgeable staff is here to guide you
+        through every step of your healthcare journey, from diagnosis to
+        recovery.
+      </p>
+
+      <p class="text-center main_text">
+        Thank you for choosing our medical service for your healthcare needs. We
+        look forward to serving you and your family with the highest level of
+        care and expertise.
+      </p>
+    </div>
+  </div>
+</div>
 <!-- Modal window of create visit -->
 <div id="modal-create-visit" class="modal fade text-center modal-lg" tabindex="-1" role="dialog">
     <!-- added modal window by id(that's important) -->
@@ -141,10 +127,10 @@
                                         aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                               <form>
+                               <form id="visit-form">
                                         <!-- the part of the select doctor on which we'll do filtr -->
                                         <select class="form-select mb-3 select-doctors"
-                                                 aria-label="Default select example" required>
+                                                 aria-label="Default select example" id="doctor" name="doctor" required>
                                                  <option selected>Choose a doctor:</option>
                                                  <option value="cardiologist">Cardiologist</option>
                                                  <option value="dentist">Dentist</option>
@@ -152,15 +138,15 @@
                                         </select>
                                         <div class="base-options">
                                                  <!-- the part of the priorty on which we'll do filtr -->
-                                                 <input required type="text" class="form-control mb-3"
+                                                 <input name="purpose" id="purpose" required type="text" class="form-control mb-3 title"
                                                           placeholder="Purpose of visit:" />
-                                                 <h6 class="mb-2">Priority:</h6>
+                                                 <h6 class="mb-2" for="priority">Priority:</h6>
                                                  <div class="form-check form-check-inline mb-3">
                                                           <label>
                                                                    High
                                                                    <input checked class="form-check-input"
                                                                             type="radio"
-                                                                            name="Priority" />
+                                                                            name="priority" value="high" id="high" />
                                                           </label>
                                                  </div>
                                                  <div class="form-check form-check-inline mb-3">
@@ -168,7 +154,7 @@
                                                                    Normal
                                                                    <input class="form-check-input"
                                                                             type="radio"
-                                                                            name="Priority" />
+                                                                            name="priority" value="normal" id="normal"/>
                                                           </label>
                                                  </div>
                                                  <div class="form-check form-check-inline mb-3">
@@ -176,63 +162,43 @@
                                                                    Low
                                                                    <input class="form-check-input"
                                                                             type="radio"
-                                                                            name="Priority" />
+                                                                            name="priority" value="low" id="low" />
                                                           </label>
                                                  </div>
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Name of the patient" />
-                                                 <input required class="form-control mb-3" type="text"
+                                                 <input name="name" id="name" class="form-control mb-3" type="text"
+                                                          placeholder="Name surname" />
+                                                 <input name="phone" id="phone" required class="form-control mb-3" type="text"
                                                           placeholder="Phone number" />
-                                                 <select class="form-select mb-3 select-dates"
-                                                          aria-label="Default select example" required>
-                                                          <option selected>Choose day:</option>
-                                                          <option value="01">Monday</option>
-                                                          <option value="02">Tuesday</option>
-                                                          <option value="03">Wednesday</option>
-                                                          <option value="04">Thursday</option>
-                                                          <option value="05">Friday</option>
-                                                 </select>
-                                                 <select class="form-select mb-3 select-hours"
-                                                          aria-label="Default select example" required>
-                                                          <option selected>Choose time:</option>
-                                                          <option value="08">08:00</option>
-                                                          <option value="09">09:00</option>
-                                                          <option value="10">10:00</option>
-                                                          <option value="11">11:00</option>
-                                                          <option value="12">12:00</option>
-                                                          <option value="13">13:00</option>
-                                                 </select>
+
+                                                          <label class="mb-2 fw-medium pointer" for="date">Date:</label>                                           
+                                                          <input class="date mb-3 form-control pointer" type="date" id="date" name="date">
                                         </div>
                                         <div class="cardiologist-options">
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Typical pressure" />
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Body mass index" />
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Description" />
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Age" />
+                                                 <input class="form-control mb-3" type="text"
+                                                          placeholder="Pressure" name="pressure" id="pressure"/>
+                                                 <input class="form-control mb-3" type="text"
+                                                          placeholder="Body mass index" name="bodyMassIndex" id="bodyMassIndex"/>
+                                                 <input class="form-control mb-3" type="text"
+                                                          placeholder="Description" name="description" id="description" />
+                                                 <input class="form-control mb-3" type="text"
+                                                          placeholder="Age" name="age" id="age"/>
                                         </div>
                                         <div class="dentist-options">
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Date of last visit" />
+                                                 <input class="form-control mb-3" type="text"
+                                                          placeholder="Date of last visit" name="lastVisit" id="lastVisit"/>
                                         </div>
-                                        <div class="therapist-options">
-                                                 <input required class="form-control mb-3" type="text"
-                                                          placeholder="Age" />
-                                        </div>
-                                        <button class="w-100 btn btn-lg btn-primary mt-2 select-doctor-btn"
+                                        <!-- <div class="therapist-options">
+                                                 <input class="form-control mb-3" type="text"
+                                                          placeholder="Age" name="age" id="age"/>
+                                        </div> -->
+                                        <button class="w-100 btn btn-lg btn-primary mt-2 select-doctor-btn" 
+                                        name="submit-btn" id="submit-btn"
                                                  type="submit">Submit</button>
                                </form>
                       </div>
              </div>
     </div>
 </div>
-
-
-<h2 class="display-2 text-center no-cards d-none">No items have been added</h2>
-<section class="container-filter m-3"></section>
-<section class="container-cards m-3 cards"></section>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
 integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
 crossorigin="anonymous"></script>
