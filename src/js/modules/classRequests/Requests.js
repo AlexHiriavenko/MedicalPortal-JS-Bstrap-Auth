@@ -6,7 +6,7 @@ export default class Requests {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ email: email, password: password }),
-    }).then((response) => response.text());
+    })
   }
 
   getCards(token) {
@@ -48,4 +48,4 @@ export default class Requests {
       },
     }).then((response) => response);
   }
-}
+};
