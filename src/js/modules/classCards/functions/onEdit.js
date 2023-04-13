@@ -1,7 +1,7 @@
 export function onEdit(token) {
     return function (event) {
-        const modalTitle = document.querySelector("h4.modal-header_title");
-        modalTitle.textContent = "Edit Visit";
+        // const modalTitle = document.querySelector("h4.modal-header_title");
+        // modalTitle.textContent = "Edit Visit";
         let target = event.target;
         const card = target.closest(".card");
         const cardId = card.id;
@@ -34,7 +34,6 @@ export function onEdit(token) {
         btnSubmit.addEventListener("click", onSubmit);
         function onSubmit(event) {
             event.preventDefault();
-            console.log("test");
             inputs.forEach((input) => {
                 const span = cardItems.find((span) => span.hasAttribute(`data-${input.id}`));
                 if (span) {

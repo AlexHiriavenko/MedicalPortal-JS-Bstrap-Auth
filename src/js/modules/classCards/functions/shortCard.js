@@ -37,10 +37,3 @@ export function shortCard(cardObj) {
   </div>
 </div>`;
 }
-
-// <p class="card-text d-none">Date:<span class="card-text doctor-type date">${date}</span></p>
-// <p class="card-text d-none">Purpose: <span class="card-text doctor-type purpose">${purpose}</span></p>
-// <p class="card-text d-none">Description: <span class="card-text doctor-type description">${description}</span></p>
-// <p class="card-text d-none">Priority<span class="card-text doctor-type priority">${priority}</span></p>
-// <p class="card-text d-none">Status:<span class="card-text doctor-type status">${status}</span></p>
-// <p class="card-text d-none">Status:<span class="card-text doctor-type status">${lastVisit}</span></p>
