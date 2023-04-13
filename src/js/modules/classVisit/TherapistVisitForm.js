@@ -11,6 +11,11 @@ class TherapistVisitForm extends Visit {
     this.dateInput = document.getElementById("date");
     this.dateTitle = document.getElementById("dateTitle");
     this.ageInput = document.getElementById("age");
+    
+    this.bodyMassIndexInput = document.getElementById("bodyMassIndex");
+    this.dofheartInput = document.getElementById("diseasesOfHeart");
+    this.pressureInput = document.getElementById("pressure");
+    this.descriptionInput = document.getElementById("description");
 
     // Добавляем обработчик события для выпадающего списка докторов
     this.selectDoctors.addEventListener("change", () => {
@@ -21,20 +26,9 @@ class TherapistVisitForm extends Visit {
       // Если выбран кардиолог, то показываем дополнительные поля формы
       if (selectedDoctor === "therapist") {
         this.showTherapistFields();
-      } else {
-        // Иначе скрываем дополнительные поля формы
-        this.hideTherapistFields();
-      }
-    });
-  }
+      } 
 
-  // Метод, который скрывает поля формы
-  hideTherapistFields() {
-    this.nameInput.style.display = "none";
-    this.phoneInput.style.display = "none";
-    this.dateInput.style.display = "none";
-    this.dateTitle.style.display = "none";
-    this.ageInput.style.display = "none";
+    });
   }
 
   // Метод, который показывает поля формы
@@ -44,6 +38,13 @@ class TherapistVisitForm extends Visit {
     this.dateInput.style.display = "block";
     this.dateTitle.style.display = "block";
     this.ageInput.style.display = "block";
+    this.descriptionInput.style.display = "block";
+
+    this.lastVisitInput.style.display = "none";
+    this.bodyMassIndexInput.style.display = "none";
+    this.dofheartInput.style.display = "none";
+    this.pressureInput.style.display = "none";
+
   }
  
 }
