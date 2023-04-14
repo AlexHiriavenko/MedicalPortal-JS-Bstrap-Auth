@@ -28,6 +28,7 @@ Student 1 : Oleksiy Giriavenko
 - Adding a new card to the server and interface.
 - Project Leader, role assigning, time and task management of team members and putting the project together.
 - Reviewing, and approving the code of other developers.
+- Overall code optimization and bug fixes.
 - 
 
 Student 2 : Viktor Melnik
