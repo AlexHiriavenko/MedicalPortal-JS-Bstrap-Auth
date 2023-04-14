@@ -40,7 +40,7 @@ class CardioVisitForm extends Visit {
         this.descriptionInput.style.display = "block";
         this.ageInput.style.display = "block";
         this.lastVisitInput.style.display = "none";
-        this.lastVisitInput.textContent = ""
+        this.lastVisitInput.value = "";
     }
 }
 
