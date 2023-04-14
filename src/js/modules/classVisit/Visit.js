@@ -1,27 +1,42 @@
 import { visitCards } from "../classCards/Cards.js";
 import { token } from "../classModal/ModalLogin.js";
+import { visitForm, modal, modalTitle } from "./variablesVisit.js";
 
 export default class Visit {
-    constructor() {
-        this.modal = document.getElementById("modal-create-visit");
-        this.selectDoctors = this.modal.querySelectorAll(".select-doctors")[0];
+    constructor(visitForm, modal) {
+        this.visitForm = visitForm;
+        this.modal = modal;
+        this.selectDoctors = document.querySelectorAll(".select-doctors")[0];
         this.lastVisitInput = document.getElementById("lastVisit");
     }
 
     getElements() {}
-
     // Метод инициализации класса добавляет обработчики событий для выпадающего меню докторов и кнопки отправки формы.
     // Также он вызывает метод showInputs(), который скрывает некоторые поля формы при инициализации.
     init() {
-        const form = document.getElementById("visit-form");
-        form.addEventListener("submit", (event) => {
+        this.visitForm.addEventListener("submit", (event) => {
             event.preventDefault();
-            return this.submit();
+            this.submit();
         });
+        
         this.showInputs();
         const close = this.modal.querySelector(".btn-close");
-        close.addEventListener("click", function () {
-            form.reset();
+        close.addEventListener("click", () => {
+            this.visitForm.reset();
+            modalTitle.textContent = "Create Visit";
+            this.showInputs();
+        });
+        const clearBtn = this.modal.querySelector("#clear-btn");
+        clearBtn.addEventListener("click", () => {
+            this.showInputs()
+            modalTitle.textContent = "Creare Visit";
+        });
+        document.addEventListener("keydown", function (event) {
+            if (event.keyCode === 27) {
+                visitForm.reset();
+                form.showInputs();
+                modalTitle.textContent = "Create Visit";     
+            }
         });
     }
 
@@ -59,8 +74,7 @@ export default class Visit {
     }
 
     submit() {
-        const form = document.getElementById("visit-form");
-        const dataValue = new FormData(form);
+        const dataValue = new FormData(this.visitForm);
 
         // Создаем объект formData, который будет содержать значения полей формы
         const formData = {
@@ -83,8 +97,9 @@ export default class Visit {
         const status = this.checkDate(formData.date);
 
         formData.status = status;
-        form.reset();
+        this.visitForm.reset();
         this.closeModal = this.modal.querySelector(".btn-close");
+        modalTitle.textContent = "Create Card";
         visitCards.createCard(token, formData);
         this.closeModal.click();
     }
@@ -102,13 +117,6 @@ export default class Visit {
     }
 }
 
-const form = new Visit();
-
+const form = new Visit(visitForm, modal);
 form.init();
 
-const mainForm = document.getElementById("visit-form");
-document.addEventListener("keydown", function (event) {
-    if (event.keyCode === 27) {
-        mainForm.reset();
-    }
-});

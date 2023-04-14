@@ -1,16 +1,19 @@
 import Requests from "../classRequests/Requests.js";
 import { shortCard } from "./functions/shortCard.js";
-import { fullContent } from "./functions/FullContent.js";
 import { onDelete } from "./functions/onDelete.js";
 import { onShowMore } from "./functions/onShowMore.js";
 import { onEdit } from "./functions/onEdit.js";
-import { token } from "../classModal/ModalLogin.js";
+import { fullContent } from "./functions/FullContent.js";
+
 
 export const cardsRequests = new Requests();
-
+// export const token = "5317fccb-f768-4268-8fa2-625878d56919"; // my token
 export const h1 = document.querySelector("h1.display-2.text-center.main_title");
 
+let token = localStorage.getItem("token");
+
 const testCardObj = {
+    id: 162237,
     name: "Ivanko",
     doctor: "cardiologist",
     purpose: "реставрация зуба",
@@ -28,7 +31,7 @@ class VisitCards {
     }
 
     renderCardsSection() {
-        this.cardsSection = document.createElement("section");
+        this.cardsSection =  document.createElement("section");
         const classesCardsSection = [
             "cards",
             "row",
@@ -44,10 +47,10 @@ class VisitCards {
         this.messageEmpty.style.textAlign = "center";
         this.parent.after(this.cardsSection);
         this.parent.after(this.messageEmpty);
-        return this.messageEmpty;
+        return this.messageEmpty
     }
 
-    renderCard(cardObj) {
+    renderCard (cardObj) {
         const card = document.createElement("div");
         card.classList.add("col", "wrapper-card");
 
@@ -58,43 +61,47 @@ class VisitCards {
         return card;
     }
 
-    async showCards(requests, token) {
+    async showCards(parent, requests, token) {
         const requestsCards = await requests.getCards(token);
-        return requestsCards.length < 1
-            ? this.messageEmpty.classList.replace("d-none", "d-block")
-            : requestsCards.map((cardObj) => this.renderCard(cardObj));
-    }
-
-    deleteCard(cards, token) {
-        if (typeof cards === "object") {
-            cards.forEach((card) => {
-                const btnDel = card.querySelector(".card-del");
-                btnDel.addEventListener("click", onDelete(token));
-            });
-            return cards;
+  
+        if (requestsCards.length < 1) {
+            this.messageEmpty.classList.replace("d-none", "d-block");
+        } else {
+            const renderCards = await requestsCards.map((cardObj) => this.renderCard(cardObj));
+            return renderCards;
         }
     }
 
-    showMore(cards) {
-        if (typeof cards === "object") {
-            cards.forEach((card) => {
+    async deleteCard(cardsArray, token) {
+        if (cardsArray) {
+            const cards = await cardsArray.forEach((card) => {
+                const btnDel = card.querySelector(".card-del");
+                btnDel.addEventListener("click", onDelete(token));
+            });
+            return cardsArray;
+        }
+    }
+
+    async showMore(cardsArray) {
+        if (cardsArray) {
+            const cards = await cardsArray.forEach((card) => {
                 const btnShowMore = card.querySelector(".show-more");
                 btnShowMore.addEventListener("click", onShowMore);
             });
         }
-        return cards;
+        return cardsArray;
     }
 
-    editCard(cards, token) {
-        if (typeof cards === "object") {
-            cards.forEach((card) => {
+    async editCard(cardsArray, token) {
+        if (cardsArray) {
+            const cards = await cardsArray.forEach((card) => {
                 const btnEdit = card.querySelector(".btn.card-edit");
                 btnEdit.addEventListener("click", onEdit(token));
             });
         }
     }
 
-    async createCard(token, obj) {
+    async createCard (token, obj) {
         const newCardObj = await cardsRequests.createCard(token, obj);
         const card = this.renderCard(newCardObj);
 
@@ -106,22 +113,63 @@ class VisitCards {
 
         const btnEdit = card.querySelector(".btn.card-edit");
         btnEdit.addEventListener("click", onEdit(token));
-
-        this.messageEmpty.classList.replace("d-block", "d-none");
+        
+        this.messageEmpty.classList.replace("d-block", "d-none") 
         return card;
     }
 }
 
+
 export const visitCards = new VisitCards(h1);
 
-export async function showAllCards(token) {
-    visitCards.renderCardsSection();
-    return visitCards
-        .showCards(cardsRequests, token)
-        .then((cards) => visitCards.deleteCard(cards, token))
-        .then((cards) => visitCards.showMore(cards))
-        .then((cards) => visitCards.editCard(cards, token));
+export function showAllCards(token) {
+        visitCards.renderCardsSection()
+        return visitCards
+        .showCards(h1, cardsRequests, token)
+        .then((cardsArray) => visitCards.deleteCard(cardsArray, token))
+        .then((cardsArray) => visitCards.showMore(cardsArray))
+        .then((cardsArray) => visitCards.editCard(cardsArray, token))
 }
 
+
+// function getToken() {
+//     return fetch("https://ajax.test-danit.com/api/v2/cards/login", {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({ email: "martmarchmartmarch@gmail.com", password: "4352" }),
+//     })
+//         .then((response) => response.text())
+//         .then((response) => console.log(response));
+// }
+
+// function createCard(token) {
+//     fetch("https://ajax.test-danit.com/api/v2/cards", {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json",
+//             Authorization: `Bearer ${token}`,
+//         },
+//         body: JSON.stringify(testCardObj),
+//     })
+//         .then((response) => response.json())
+//         .then((response) => console.log(response));
+// }
+
+// createCard(token); // каждое обновление страницы - это один запуск + 1 карточка
+
+
+// export const token = "0360ffe9-0bf3-4ef0-ac36-247faebc6cd4";  // token Viktor
+// getToken().then(token => createCard(token));
+// getToken();
+
+// getAllCards();
+
+
 const test = document.querySelector("h5.text-primary.header__logo-title");
+
+
+// visitCards.createCard(token, testCardObj);
+
 test.addEventListener("click", () => visitCards.createCard(token, testCardObj));
