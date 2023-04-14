@@ -17,7 +17,7 @@
                     <div class="doctors_section">
                         <select class="form-select mb-3 select-doctors" aria-label="Default select example" id="doctor"
                             name="doctor" required>
-                            <option selected>Choose a doctor:</option>
+                            <option selected disabled>Choose a doctor:</option>
                             <option value="cardiologist" id="cardiologist">Cardiologist</option>
                             <option value="dentist" id="dentist">Dentist</option>
                             <option value="therapist" id="therapist">Therapist</option>
@@ -49,12 +49,12 @@
                                 </label>
                             </div>
                         </div>
-                        <input name="name" id="name" class="form-control mb-3" type="text" placeholder="Name surname" />
+                        <input name="name" id="name" required class="form-control mb-3" type="text" placeholder="Name surname" />
                         <input name="phone" id="phone" required class="form-control mb-3" type="text"
                             placeholder="Phone number" />
 
                         <label class="mb-2 fw-medium pointer" id="dateTitle" for="date">Date:</label>
-                        <input class="date mb-3 form-control pointer" type="date" id="date" name="date">
+                        <input required class="date mb-3 form-control pointer" type="date" id="date" name="date">
                     </div>
                     <div class="cardiologist-options">
                         <input class="form-control mb-3" type="text" placeholder="Pressure" name="pressure"
