@@ -1,0 +1,20 @@
+//header section
+.header__logo-title {
+    color: #05137d;
+    padding-left: 5px;
+    font-size: 22px;
+  
+    @media screen and (max-width: 767px) {
+      font-size: 18px;
+      margin-bottom: 0px;
+    }
+  }
+  
+  // modal section
+  .modal-header_svg {
+    padding-right: 5px;
+    width: 30px;
+  }
+  .modal-header_title {
+    margin-bottom: 0.1rem;
+  }
