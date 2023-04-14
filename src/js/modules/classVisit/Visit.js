@@ -100,7 +100,13 @@ export default class Visit {
         this.visitForm.reset();
         this.closeModal = this.modal.querySelector(".btn-close");
         modalTitle.textContent = "Create Card";
+        if (visitForm.dataset.editId) {
+            const id = visitForm.dataset.editId;
+            visitCards.editCard(token, id, formData);
+            visitForm.removeAttribute('data-edit-id');
+        } else {
         visitCards.createCard(token, formData);
+        }
         this.closeModal.click();
     }
 

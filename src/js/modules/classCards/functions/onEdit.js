@@ -9,7 +9,7 @@ export function onEdit(token) {
         let target = event.target;
         const card = target.closest(".card");
         const cardId = card.id;
-
+        visitForm.dataset.editId = cardId;
 
         const inputs = [...visitForm.querySelectorAll("input")];
         const cardItems = [...card.querySelectorAll(".card-text span")];

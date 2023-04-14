@@ -92,7 +92,7 @@ class VisitCards {
         return cardsArray;
     }
 
-    async editCard(cardsArray, token) {
+    async showEditForm(cardsArray, token) {
         if (cardsArray) {
             const cards = await cardsArray.forEach((card) => {
                 const btnEdit = card.querySelector(".btn.card-edit");
@@ -117,6 +117,20 @@ class VisitCards {
         this.messageEmpty.classList.replace("d-block", "d-none") 
         return card;
     }
+
+    async editCard (token, id, obj) {
+        const editObj = await cardsRequests.editCard(token, id, obj);
+        const card = document.getElementById(id).parentNode;
+        card.innerHTML = shortCard(editObj);
+        const cardFullContent = card.querySelector(".full-content");
+        fullContent(editObj, cardFullContent);
+        const btnDel = card.querySelector(".card-del");
+        btnDel.addEventListener("click", onDelete(token));
+        const btnShowMore = card.querySelector(".show-more");
+        btnShowMore.addEventListener("click", onShowMore);
+        const btnEdit = card.querySelector(".btn.card-edit");
+        btnEdit.addEventListener("click", onEdit(token));
+    }
 }
 
 
@@ -128,7 +142,7 @@ export function showAllCards(token) {
         .showCards(h1, cardsRequests, token)
         .then((cardsArray) => visitCards.deleteCard(cardsArray, token))
         .then((cardsArray) => visitCards.showMore(cardsArray))
-        .then((cardsArray) => visitCards.editCard(cardsArray, token))
+        .then((cardsArray) => visitCards.showEditForm(cardsArray, token))
 }
 
 
