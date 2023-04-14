@@ -31,5 +31,8 @@ export function fullContent(cardObj, parent) {
             p.classList.add("card-text");
             const span = p.querySelector(`span[data-${camelKey}]`);
             span.textContent = cardObj[camelKey];
+            if (camelKey === "purpose") {
+                span.classList.add("purpose");
+            }
         });
 }
