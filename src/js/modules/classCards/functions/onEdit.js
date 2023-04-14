@@ -1,7 +1,7 @@
 import { therapistVisitForm } from "../../classVisit/TherapistVisitForm.js";
 import { cardioVisitForm } from "../../classVisit/CardioVisitForm.js";
 import { dentiistVisitForm } from "../../classVisit/DentistVisitForm.js";
-import { visitForm, modalTitle} from "../../classVisit/variablesVisit.js";
+import { visitForm, modalTitle } from "../../classVisit/variablesVisit.js";
 
 export function onEdit(token) {
     return function (event) {
@@ -38,5 +38,24 @@ export function onEdit(token) {
             .textContent.toLowerCase();
         const priorityInput = visitForm.querySelector(`#${priorityItem}`);
         priorityInput.checked = true;
+
+        function handleClick(event) {
+            if (event.target.closest(".modal-content")) {
+                console.log("asd");
+                document.removeEventListener("click", handleClick);
+            }
+        }
+        setTimeout(() => {
+            document.addEventListener("click", overForm);
+        }, 200);
+
+        function overForm(event) {
+            if (!event.target.closest(".modal-content")) {
+                visitForm.querySelector("#clear-btn").click();
+                visitForm.removeAttribute("data-edit-id");
+                modalTitle.textContent = "Create Card";
+                document.removeEventListener("click", overForm);
+            }
+        }
     };
 }

@@ -18,7 +18,7 @@ export default class Visit {
             event.preventDefault();
             this.submit();
         });
-        
+
         this.showInputs();
         const close = this.modal.querySelector(".btn-close");
         close.addEventListener("click", () => {
@@ -28,14 +28,14 @@ export default class Visit {
         });
         const clearBtn = this.modal.querySelector("#clear-btn");
         clearBtn.addEventListener("click", () => {
-            this.showInputs()
+            this.showInputs();
             modalTitle.textContent = "Creare Visit";
         });
         document.addEventListener("keydown", function (event) {
             if (event.keyCode === 27) {
                 visitForm.reset();
                 form.showInputs();
-                modalTitle.textContent = "Create Visit";     
+                modalTitle.textContent = "Create Visit";
             }
         });
     }
@@ -103,9 +103,9 @@ export default class Visit {
         if (visitForm.dataset.editId) {
             const id = visitForm.dataset.editId;
             visitCards.editCard(token, id, formData);
-            visitForm.removeAttribute('data-edit-id');
+            visitForm.removeAttribute("data-edit-id");
         } else {
-        visitCards.createCard(token, formData);
+            visitCards.createCard(token, formData);
         }
         this.closeModal.click();
     }
@@ -125,4 +125,3 @@ export default class Visit {
 
 const form = new Visit(visitForm, modal);
 form.init();
-
