@@ -1,4 +1,8 @@
-// main section
+@import "header";
+@import "filterMenu";
+@import "modal";
+@import "cards";
+
 html {
   height: 100%;
 }
@@ -7,7 +11,7 @@ html {
   background-position: center;
   background-size: cover;
   min-height: 100vh;
-  // background-attachment: fixed;
+  background-attachment: fixed;
   position: relative;
   margin-bottom: 0px;
 }
@@ -20,33 +24,12 @@ html {
   color: #3f3f41;
 }
 
-//header section
-.header__logo-title {
-  color: #05137d;
-  padding-left: 5px;
-  font-size: 22px;
-
-  @media screen and (max-width: 767px) {
-    font-size: 18px;
-    margin-bottom: 0px;
-  }
-}
-
-// modal section
-.modal-header_svg {
-  padding-right: 5px;
-  width: 30px;
-}
-.modal-header_title {
-  margin-bottom: 0.1rem;
-}
-
-// appointments section
-.nav-item_filtr {
-  padding-left: 20px;
-  font-size: 18px;
-}
-.navbar_title {
-  padding-right: 150px;
-  color: #3f3f41;
-}
+// // appointments section
+// .nav-item_filtr {
+//   padding-left: 20px;
+//   font-size: 18px;
+// }
+// .navbar_title {
+//   padding-right: 150px;
+//   color: #3f3f41;
+// }
