@@ -97,7 +97,6 @@ export default class Visit {
         const status = this.checkDate(formData.date);
 
         formData.status = status;
-        this.visitForm.reset();
         this.closeModal = this.modal.querySelector(".btn-close");
         modalTitle.textContent = "Create Card";
         if (visitForm.dataset.editId) {
