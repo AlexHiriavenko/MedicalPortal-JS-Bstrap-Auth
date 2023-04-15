@@ -5,28 +5,35 @@ import { showAllCards } from "../classCards/Cards.js";
 
 let token = localStorage.getItem("token");
 
-export default class ModalLogin extends Modal {
+export class ModalLogin extends Modal {
   constructor(modalId = "", title = "") {
     super(modalId, title);
-    this.emailInput = null;
-    this.passwordInput = null;
-    this.onSubmit = this.onSubmit.bind(this); // байндим к экземпляру класса ModalLogin
-    this.getToken = this.getToken.bind(this); // байндим к экземпляру класса ModalLogin
   }
 
-  async getToken() {
+  onSubmit = async function (event) {
+    event.preventDefault();
     try {
       const request = new Requests();
       const emailInput = document.querySelector("#input-email");
       const passwordInput = document.querySelector("#floatingPassword");
-      const tokenRequest = await request.tokenRequest(emailInput.value, passwordInput.value);
+      const tokenRequest = await request.tokenRequest(
+        emailInput.value,
+        passwordInput.value
+      );
       if (tokenRequest.ok) {
         token = await tokenRequest.text();
-        console.log(token);
         localStorage.setItem("token", token);
         localStorage.setItem("email", emailInput.value);
         localStorage.setItem("password", passwordInput.value);
         localStorage.setItem("autoLogIn", true);
+
+        changeContentOnPage();
+
+        const btnCloseModal = document.querySelector("#btn-close-modal");
+        await btnCloseModal.click();
+    
+        await showAllCards(token);
+
       } else {
         throw new Error(
           `Error ${tokenRequest.status}: Incorrect username or password`
@@ -35,53 +42,31 @@ export default class ModalLogin extends Modal {
     } catch (error) {
       alert(error.message);
     }
-  } 
-
-  onSubmit = async function (event) {
-    event.preventDefault();
-    if (!token) {              // если токена нет в локал сторедже 
-      await this.getToken();   // запускает get token и записывает его в локал сторедж
-    }
-    this.emailInput =  document.querySelector("#input-email");
-    this.passwordInput = document.querySelector("#floatingPassword");
-    
-    const btnCloseModal = document.querySelector("#btn-close-modal")
-    await btnCloseModal.click();
-    const logInBtn = document.querySelector(".header__btn-login");
-    logInBtn.classList.add("d-none");
-    const createVisitBtn = document.querySelector(".header__btn-create-visit");
-    createVisitBtn.classList.replace("d-none", "d-block");
-    const filterCards = document.querySelector("#cardsFilter");
-    filterCards.classList.replace("d-none", "d-block");
-    const mainTitle = document.querySelector(".main_title");
-    mainTitle.textContent = "Your Visits";
-    const mainText = document.querySelector("#text-container");
-    mainText.classList.add("d-none");
-    await showAllCards(token);
   }
 
   renderModalLoginContent() {
-    const formLogin = new FormsLogin ( "Sign in", this.onSubmit, "signin"); 
+    const formLogin = new FormsLogin("Sign in", this.onSubmit, "signin");
     return formLogin.renderForms(formLogin.renderFormsLoginContent());
   }
 }
 
+const modalLogin = new ModalLogin("modal-sign-in");
+document.body.prepend(
+  modalLogin.renderModal(modalLogin.renderModalLoginContent())
+);
 
-const modalLogin = new ModalLogin ( "modal-sign-in"); 
-document.body.prepend(modalLogin.renderModal(modalLogin.renderModalLoginContent()));
+export const changeContentOnPage = function () {
+  const logInBtn = document.querySelector(".header__btn-login");
+  logInBtn.classList.add("d-none");
+  const createVisitBtn = document.querySelector(".header__btn-create-visit");
+  createVisitBtn.classList.replace("d-none", "d-block");
+  const exitBtn = document.querySelector(".header__btn-exit");
+  exitBtn.classList.replace("d-none", "d-block");
+  const filterCards = document.querySelector("#cardsFilter");
+  filterCards.classList.replace("d-none", "d-block");
+  const mainTitle = document.querySelector(".main_title");
+  mainTitle.textContent = "Your Visits";
+  const mainText = document.querySelector("#text-container");
+  mainText.classList.add("d-none");
+}
 
-
-
-window.onload = function () {
-    if (localStorage.getItem("autoLogIn")) {
-      const email = document.querySelector("#input-email");
-      const password = document.querySelector("#floatingPassword");
-      email.value = localStorage.getItem("email");
-      password.value = localStorage.getItem("password");
-      autoClick("submit");
-    }
-  };
-  
-  const autoClick = (id) => document.getElementById(`${id}`).click();
-
-  

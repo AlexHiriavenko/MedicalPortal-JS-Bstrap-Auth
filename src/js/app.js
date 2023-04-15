@@ -7,6 +7,6 @@ import * as Cards from "./modules/classCards/Cards.js";
 import * as Modal from "./modules/classModal/Modal.js";
 import * as ModalLogin from "./modules/classModal/ModalLogin.js";
 import * as filter from "./modules/filter.js";
-
+import * as autoLoginAndExit from "./modules/classModal/autoLoginAndExit.js";
 // здесь мы ничего не пишем (код писать в modules например modules/header.js)
 
