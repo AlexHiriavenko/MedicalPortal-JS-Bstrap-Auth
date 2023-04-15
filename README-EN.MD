@@ -1,15 +1,15 @@
-Step Project Cards
--
-Project Participants:
--
+## Step Project Medical Portal
+
+ ## Project Participants:
+
 - ma_rch - Oleksiy Giriavenko, Гірявенко Олексій,
 - melnikviktor82 - Viktor Melnik, Мельник Віктор,
 - Prdrice - Natalia Perederia, Передеря Наталя, 
 
-Technologies utilized:
+## Technologies utilized:
 -
 - HTML 
-- CSS 
+- SCSS
 - Gulp
 - JavaScript 
 - BootStrap Library
@@ -17,52 +17,37 @@ Technologies utilized:
 - Git
 
 Participant's Roles:
+Subtotal: development of the project structure, definition of the main JS classes.
 - 
-Student 1 : Oleksiy Giriavenko
-- HTML DOM elements creation.
+## Student 1 : Oleksiy Giriavenko
 - Gulp functionality customization.
-- Card Section.
-- Add Card Functionality - Cards.js
+- Card Section. Using the server request class provide:
+display cards( adaptive, full / short card), create, edit, delete a card.
+- Class VisitCards.
+- Role assigning, time and task management of team members and putting the project together.
+
+## Student 2 : Viktor Melnik
 - Parent class for requests on the server by API - Request.js
-- Validation of the edit cards.
-- Adding a new card to the server and interface.
-- Project Leader, role assigning, time and task management of team members and putting the project together.
-- Reviewing, and approving the code of other developers.
-- Overall code optimization and bug fixes.
-- 
+- Authorization functionality( login), validation and logic of what happens after successful authorization.
+- Class Modal, child class - ModalLogin.js
+- Class Modal, child class - FormsLogin.js
+- Filter/search for maps by parameters.
 
-Student 2 : Viktor Melnik
-- Filter HTML DOM elements creation.
-- Modal window "SignIn".
-- Modal parent class - Modal.js
-- Modal child class - ModalLogin.js
-- Form input validation in add to "SignIn" part.
-- SignIn Button Functionality.
-- Parent class Forms.js  
-- Forms child classes - FormsLogin.js
-- Filter visual design and representation with Bootstrap, and JavaScript Functionality.
-- Reviewing, and approving the code of other developers.
--
+## Student 3 : Natalia Perederia
+- Creating a project visual design.
+- Creating HTML markup, page frame, and styling using Bootstrap.
+- Creation and functionality of the "Creat Visit" form
+(form display and data processing/transmission depending on the options selected by the user).
+- Class Visit, child classes - CardioVisitForm.js DentistVisitForm.js TherapistVisitForm.js
 
-Student 3 : Natalia Perederia
-- HTML DOM elements creation.
-- Bootstrap functionality customization.
-- Visual design and representation with Bootstrap.
-- Modal windom "Creat Visit" and Functionality.
-- Form input validation in add to "Creat Visit" part.
-- Visit parent class - Visit.js
-- Visit child classes - CardioVisitForm.js DentistVisitForm.js TherapistVisitForm.js
-- Customization "class Visit" for sending requests on the server.
-- Reviewing, and approving the code of other developers.
--
-
-Additional information:
+## Additional information:
 1. Deploy the project - run npm i(install) command in the terminal(you must have Node JS installed).
 2. Start developer mode - npm run dev command.
 3. Start production mode - npm run product - command in both cases root index.html it'll be located in the root of the project folder, all other files will be located in the dist folder.
 4. Delete the dist folder and the root index.html - npm run delDis command.
 
-Project URL: 
+## Project URL: 
+
 Contacts for reviews and suggestions:
 - E-mail: martmarchmartmarch@gmail.com / Telegram: https://t.me/Alleexxeeyy
 - Telegram: https://t.me/MelnikVikt
