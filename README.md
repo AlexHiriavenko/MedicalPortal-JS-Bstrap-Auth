@@ -50,6 +50,6 @@ URL Проекту:
 
 E-mail: martmarchmartmarch@gmail.com / Telegram: https://t.me/Alleexxeeyy
 
-Telegram: https://t.me/MelnikVikt
+E-mail: melnikviktor82@gmai.com Telegram: https://t.me/MelnikVikt
 
 E-mail: prdricen@gmail.com / Telegram: https://t.me/Natalii1002
