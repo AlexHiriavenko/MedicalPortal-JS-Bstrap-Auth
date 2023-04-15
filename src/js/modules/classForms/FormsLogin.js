@@ -11,7 +11,7 @@ export default class FormsLogin extends Forms {
 
         divWrapperElement.innerHTML = `
         <img class="mb-4 justify-content-center"
-              src="./src/img/medicine-logo.png"
+              src="./dist/img/medicine-logo.png"
               alt="logo" width="72"
               height="57" />
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>

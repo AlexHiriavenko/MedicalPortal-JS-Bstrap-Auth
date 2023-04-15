@@ -34,7 +34,7 @@ Subtotal: development of the project structure, definition of the main JS classe
 -   Parent class for requests on the server by API - Request
 -   Authorization functionality( login), validation and logic of what happens after successful authorization.
 -   Class Modal, child class - ModalLogin
--   Class Modal, child class - FormsLogin
+-   Class Forms, child class - FormsLogin
 -   Filter/search for maps by parameters.
 
 ## Student 3 : Natalia Perederia
