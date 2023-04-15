@@ -1,17 +1,17 @@
 import Forms from "./Forms.js";
 
 export default class FormsLogin extends Forms {
-  constructor(submitButtonName, submitFunction, formId = "") {
-    super(submitButtonName, submitFunction, formId);
-  }
+    constructor(submitButtonName, submitFunction, formId = "") {
+        super(submitButtonName, submitFunction, formId);
+    }
 
-  renderFormsLoginContent() {
-    const divWrapperElement = document.createElement('div');
-    divWrapperElement.classList.add('form-signin', 'w-100', 'm-auto');
+    renderFormsLoginContent() {
+        const divWrapperElement = document.createElement("div");
+        divWrapperElement.classList.add("form-signin", "w-100", "m-auto");
 
-    divWrapperElement.innerHTML = `
+        divWrapperElement.innerHTML = `
         <img class="mb-4 justify-content-center"
-              src="src/img/medicine-logo.png"
+              src="./src/img/medicine-logo.png"
               alt="logo" width="72"
               height="57" />
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
@@ -40,6 +40,6 @@ export default class FormsLogin extends Forms {
                 id="rememberme"/> <span>Remember me</span></label>
         </div>`;
 
-    return divWrapperElement;
-  }
-};
+        return divWrapperElement;
+    }
+}
