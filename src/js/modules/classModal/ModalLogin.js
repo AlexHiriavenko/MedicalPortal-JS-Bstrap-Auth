@@ -27,7 +27,6 @@ export default class ModalLogin extends Modal {
                 localStorage.setItem("email", emailInput.value);
                 localStorage.setItem("password", passwordInput.value);
                 localStorage.setItem("autoLogIn", true);
-                return token;
             } else {
                 throw new Error(`Error ${tokenRequest.status}: Incorrect username or password`);
             }
@@ -39,7 +38,8 @@ export default class ModalLogin extends Modal {
     onSubmit = async function (event) {
         event.preventDefault();
         if (!token) {
-            await this.getToken();
+            // если токена нет в локал сторедже
+            await this.getToken(); // запускает get token и записывает его в локал сторедж
         }
         this.emailInput = document.querySelector("#input-email");
         this.passwordInput = document.querySelector("#floatingPassword");
@@ -50,6 +50,12 @@ export default class ModalLogin extends Modal {
         logInBtn.classList.add("d-none");
         const createVisitBtn = document.querySelector(".header__btn-create-visit");
         createVisitBtn.classList.replace("d-none", "d-block");
+        const filterCards = document.querySelector("#cardsFilter");
+        filterCards.classList.replace("d-none", "d-block");
+        const mainTitle = document.querySelector(".main_title");
+        mainTitle.textContent = "Your Visits";
+        const mainText = document.querySelector("#text-container");
+        mainText.classList.add("d-none");
         await showAllCards(token);
     };
 
@@ -73,5 +79,3 @@ window.onload = function () {
 };
 
 const autoClick = (id) => document.getElementById(`${id}`).click();
-
-// localStorage.clear();

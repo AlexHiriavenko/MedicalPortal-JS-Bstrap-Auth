@@ -1,6 +1,7 @@
-<nav id="cardsFilter" class="navbar navbar-expand-lg bg-transparent d-none">
+<nav id="cardsFilter" class="nav-item_filtr navbar navbar-expand-lg bg-transparent d-none">
     <div class="container-fluid d-flex justify-content-center align-items-end">
-        <h2 class="me-3 mb-0"><img height="32" width="32" src="src/img/filter_icon.png" alt="logo"> Visits filter:</h2>
+        <h2 class="navbar_title me-3 mb-0"><img height="32" width="32" src="src/img/filter_icon.png" alt="logo"> Visits
+            Filter</h2>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -8,27 +9,27 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <form class="d-flex justify-content-center align-items-end">
                 <div class="form-group me-3">
-                    <label for="searchInput" class="mr-2"></label>
-                    <input type="text" class="form-control" id="searchInput" placeholder="Enter purpose visit">
+                    <label for="searchInput" class="mr-2">Purpose:</label>
+                    <input type="search" class="form-control" id="searchInput" placeholder="Enter purpose visit">
                 </div>
                 <div class="form-group me-3">
-                    <label for="select1" class="mr-2"></label>
+                    <label for="selectStatus" class="mr-2">Status:</label>
                     <select class="form-control" id="selectStatus">
-                        <option>Status:</option>
-                        <option>Open</option>
-                        <option>Done</option>
+                        <option value=""></option>
+                        <option value="open">Open</option>
+                        <option value="done">Done</option>
                     </select>
                 </div>
                 <div class="form-group me-3">
-                    <label for="select2" class="mr-2"></label>
-                    <select class="form-control" id="select2">
-                        <option>Priority:</option>
-                        <option>High</option>
-                        <option>Normal</option>
-                        <option>Low</option>
+                    <label for="selectPriority" class="mr-2">Priority:</label>
+                    <select class="form-control" id="selectPriority">
+                        <option value=""></option>
+                        <option value="high">High</option>
+                        <option value="normal">Normal</option>
+                        <option value="low">Low</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Search</button>
+                <button id="searchBtn" type="submit" class="btn btn-primary">Search</button>
             </form>
         </div>
     </div>

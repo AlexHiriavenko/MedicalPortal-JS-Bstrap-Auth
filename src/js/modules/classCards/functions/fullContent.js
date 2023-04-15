@@ -26,5 +26,9 @@ export function fullContent(cardObj, parent) {
                 1
             )}: </strong><span data-${camelKey}>${cardObj[camelKey]}</span>`;
             parent.append(p);
+            const span = p.querySelector("span");
+            if (camelKey === "purpose") {
+                span.classList.add("purpose");
+            }
         });
 }
