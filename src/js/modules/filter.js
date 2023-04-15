@@ -1,27 +1,44 @@
 const searchBtn = document.querySelector("#searchBtn");
+const resetBtn = document.querySelector("#resetBtn");
 
-searchBtn.addEventListener("click", (event) => {
-    event.preventDefault();
+const searchInput = document.querySelector("#searchInput");
+const selectStatus = document.querySelector("#selectStatus");
+const selectPriority = document.querySelector("#selectPriority");
 
+searchBtn.addEventListener("click", () => {
     const cardsArr = Array.from(document.querySelectorAll(".card"));
-
-    const searchInput = document.querySelector("#searchInput");
-
-    const selectStatus = document.querySelector("#selectStatus");
-
-    const selectPriority = document.querySelector("#selectPriority");
 
     cardsArr.forEach((card) => {
         const purposeProperty = card.querySelector(".purpose");
         card.parentNode.classList.add("d-none");
 
         if (
-            card.dataset.status === selectStatus.value ||
-            card.dataset.priority === selectPriority.value ||
-            (searchInput.value !== "" &&
-                purposeProperty.innerText.includes(searchInput.value.trim()))
+            selectStatus.value === "" &&
+            selectPriority.value === "" &&
+            searchInput.value.trim() === ""
         ) {
             card.parentNode.classList.replace("d-none", "d-block");
         }
+
+        if (
+            (card.dataset.status === selectStatus.value || selectStatus.value === "") &&
+            (card.dataset.priority === selectPriority.value || selectPriority.value === "") &&
+            (purposeProperty.innerText.toLowerCase().includes(searchInput.value.toLowerCase()) ||
+                searchInput.value.trim() === "")
+        ) {
+            card.parentNode.classList.replace("d-none", "d-block");
+        }
+    });
+});
+
+resetBtn.addEventListener("click", () => {
+    const cardsArr = Array.from(document.querySelectorAll(".card"));
+
+    cardsArr.forEach((card) => {
+        card.parentNode.classList.replace("d-none", "d-block");
+
+        selectStatus.value = "";
+        selectPriority.value = "";
+        searchInput.value = "";
     });
 });

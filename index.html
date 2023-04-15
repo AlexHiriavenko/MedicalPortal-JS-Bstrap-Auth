@@ -25,12 +25,16 @@
         data-bs-target="#modal-sign-in">Login
       </button>
       <!-- Modal window added in Create visit by data toggle and target -->
-      <button type="button" class="btn btn-primary header__btn-create-visit none d-none" data-bs-toggle="modal"
+      <button type="button" class="btn btn-primary header__btn-create-visit none me-3 d-none" data-bs-toggle="modal"
         data-bs-target="#modal-create-visit">Create visit
+      </button>
+      <button type="button" class="btn btn-primary header__btn-exit none d-none" data-bs-toggle="modal"
+        data-bs-target="#modal-exit">Exit
       </button>
     </div>
   </header>
 </div>
+
 
   
 <nav id="cardsFilter" class="nav-item_filtr navbar navbar-expand-lg bg-transparent d-none">
@@ -51,8 +55,8 @@
                     <label for="selectStatus" class="mr-2">Status:</label>
                     <select class="form-control" id="selectStatus">
                         <option value=""></option>
-                        <option value="open">Open</option>
-                        <option value="done">Done</option>
+                        <option value="Open">Open</option>
+                        <option value="Done">Done</option>
                     </select>
                 </div>
                 <div class="form-group me-3">
@@ -64,7 +68,8 @@
                         <option value="low">Low</option>
                     </select>
                 </div>
-                <button id="searchBtn" type="submit" class="btn btn-primary">Search</button>
+                <button id="searchBtn" type="button" class="btn btn-primary me-3">Search</button>
+                <button id="resetBtn" type="button" class="btn btn-primary">Reset</button>
             </form>
         </div>
     </div>
