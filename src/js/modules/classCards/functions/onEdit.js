@@ -39,18 +39,15 @@ export function onEdit(token) {
         const priorityInput = visitForm.querySelector(`#${priorityItem}`);
         priorityInput.checked = true;
 
-        function handleClick(event) {
-            if (event.target.closest(".modal-content")) {
-                console.log("asd");
-                document.removeEventListener("click", handleClick);
-            }
-        }
         setTimeout(() => {
             document.addEventListener("click", overForm);
         }, 200);
 
         function overForm(event) {
-            if (!event.target.closest(".modal-content")) {
+            if (
+                !event.target.closest(".modal-content") &&
+                !event.target.closest(".btn.card-edit")
+            ) {
                 visitForm.querySelector("#clear-btn").click();
                 visitForm.removeAttribute("data-edit-id");
                 modalTitle.textContent = "Create Card";

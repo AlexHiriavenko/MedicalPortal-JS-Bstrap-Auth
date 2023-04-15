@@ -29,7 +29,7 @@
         data-bs-target="#modal-create-visit">Create visit
       </button>
       <button type="button" class="btn btn-primary header__btn-exit none d-none" data-bs-toggle="modal"
-        data-bs-target="#modal-exit">Exit
+        data-bs-target="#modal-exit">Log Out
       </button>
     </div>
   </header>
@@ -37,7 +37,7 @@
 
 
   
-<nav id="cardsFilter" class="nav-item_filtr navbar navbar-expand-lg bg-transparent d-none">
+<nav id="cardsFilter" class="nav-item_filtr navbar navbar-expand-lg d-none">
     <div class="container-fluid d-flex justify-content-center align-items-end">
         <h2 class="navbar_title me-3 mb-0"><img height="32" width="32" src="src/img/filter_icon.png" alt="logo"> Visits
             Filter</h2>
@@ -48,21 +48,21 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <form class="d-flex justify-content-center align-items-end">
                 <div class="form-group me-3">
-                    <label for="searchInput" class="mr-2">Purpose:</label>
+                    <label for="searchInput" class="mr-2"></label>
                     <input type="search" class="form-control" id="searchInput" placeholder="Enter purpose visit">
                 </div>
                 <div class="form-group me-3">
-                    <label for="selectStatus" class="mr-2">Status:</label>
+                    <label for="selectStatus" class="mr-2"></label>
                     <select class="form-control" id="selectStatus">
-                        <option value=""></option>
+                        <option value="" selected disabled>Choose Status</option>
                         <option value="Open">Open</option>
                         <option value="Done">Done</option>
                     </select>
                 </div>
                 <div class="form-group me-3">
-                    <label for="selectPriority" class="mr-2">Priority:</label>
+                    <label for="selectPriority" class="mr-2"></label>
                     <select class="form-control" id="selectPriority">
-                        <option value=""></option>
+                        <option value="" selected disabled>Choose Priority</option>
                         <option value="high">High</option>
                         <option value="normal">Normal</option>
                         <option value="low">Low</option>
