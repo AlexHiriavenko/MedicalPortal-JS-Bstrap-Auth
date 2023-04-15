@@ -19,15 +19,15 @@ HTML, SCSS, JavaScript, Fetch API, Gulp, Git
 -   Налаштування Gulp.
 -   Розділ з картками. Використовуючи клас запитів на серевер забезпечити:
     відображення карток (адаптив, full/short card), створити, редагувати, видалити картку.
-    Class Visit Cards.
+-   Class Visit Cards.
 -   Розподіл ролей, управління часом та завданнями членів команди та об'єднання проекту.
 
 Мельник Віктор:
 
 -   Батьківський клас для запитів на сервер по API - Request.js
 -   Функціонал авторизації (логін), валідація та логіка того що відбувається після успішної авторизації
-    Class Modal.js, дочірній ModalLogin;
-    Class Forms.js, дочірній FormsLogin;
+-   Class Modal.js, дочірній ModalLogin;
+-   Class Forms.js, дочірній FormsLogin;
 -   Фільтр/пошук карток за параметрами
 
 Передеря Наталя:
@@ -36,7 +36,7 @@ HTML, SCSS, JavaScript, Fetch API, Gulp, Git
 -   Створення HTML розмітки, каркасу сторінки, стилізация за допомогою Bootstrap
 -   створення та функціонал форми "створити картку"
     (відображення форм та обробка/передача даних в залежності від обраних користувачем опцій)
-    Classes Visit , дочірні CardioVisitForm, DentistVisitForm, TherapistVisitForm
+-   Classes Visit , дочірні CardioVisitForm, DentistVisitForm, TherapistVisitForm
     Додаткова інформація:
 
 Развернуть проект - запустите в терминале команду npm i(у вас должен быть установлен Node JS).
