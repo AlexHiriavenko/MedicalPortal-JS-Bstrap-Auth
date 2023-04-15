@@ -29,7 +29,7 @@ export default class Visit {
         const clearBtn = this.modal.querySelector("#clear-btn");
         clearBtn.addEventListener("click", () => {
             this.showInputs();
-            modalTitle.textContent = "Creare Visit";
+            modalTitle.textContent = "Create Visit";
         });
         document.addEventListener("keydown", function (event) {
             if (event.keyCode === 27) {
