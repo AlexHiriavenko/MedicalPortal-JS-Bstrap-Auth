@@ -6,8 +6,8 @@
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <form class="d-flex justify-content-center align-items-end">
+        <div> 
+            <form class="d-flex flex-wrap justify-content-center align-items-end collapse navbar-collapse" id="navbarNavDropdown">
                 <div class="form-group me-3">
                     <label for="searchInput" class="mr-2"></label>
                     <input type="search" class="form-control" id="searchInput" placeholder="Enter purpose visit">
@@ -29,8 +29,10 @@
                         <option value="low">Low</option>
                     </select>
                 </div>
-                <button id="searchBtn" type="button" class="btn btn-primary me-3">Search</button>
-                <button id="resetBtn" type="button" class="btn btn-primary">Reset</button>
+                <div class="form-group me-3">
+                    <button id="searchBtn" type="button" class="btn btn-primary me-3 mt-3">Search</button>
+                    <button id="resetBtn" type="button" class="btn btn-primary me-3 mt-3">Reset</button>
+                </div>
             </form>
         </div>
     </div>
