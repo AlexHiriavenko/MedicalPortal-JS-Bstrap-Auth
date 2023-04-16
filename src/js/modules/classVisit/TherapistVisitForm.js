@@ -41,13 +41,16 @@ class TherapistVisitForm extends Visit {
     this.descriptionInput.style.display = "block";
 
     this.lastVisitInput.style.display = "none";
+    this.lastVisitInput.value = "";
     this.bodyMassIndexInput.style.display = "none";
+    this.bodyMassIndexInput.value = "";
     this.dofheartInput.style.display = "none";
+    this.dofheartInput.value = "";
     this.pressureInput.style.display = "none";
+    this.pressureInput.value = "";
 
   }
  
 }
 
 const therapistVisitForm = new TherapistVisitForm();
-therapistVisitForm.init();

@@ -43,11 +43,11 @@ class CardioVisitForm extends Visit {
     this.ageInput.style.display = "block";
 
     this.lastVisitInput.style.display = "none";
-
+    this.lastVisitInput.value = "";
   }
  
 }
 
 // Создаем экземпляр класса CardioVisitForm и инициализируем его
 const cardioVisitForm = new CardioVisitForm();
-cardioVisitForm.init();
+

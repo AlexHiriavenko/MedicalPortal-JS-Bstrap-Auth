@@ -40,11 +40,16 @@ class DentiistVisitForm extends Visit {
     this.descriptionInput.style.display = "block";
 
     this.bodyMassIndexInput.style.display = "none";
+    this.bodyMassIndexInput.value = "";
     this.dofheartInput.style.display = "none";
+    this.dofheartInput.value = "";
     this.pressureInput.style.display = "none";
+    this.pressureInput.value = "";
     this.ageInput.style.display = "none";
+    this.ageInput.value = "";
+
   }
 }
 
 const dentiistVisitForm = new DentiistVisitForm();
-dentiistVisitForm.init();
+
