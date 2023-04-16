@@ -52,7 +52,7 @@ Subtotal: development of the project structure, definition of the main JS classe
 3. Start production mode - npm run product - command in both cases root index.html it'll be located in the root of the project folder, all other files will be located in the dist folder.
 4. Delete the dist folder and the root index.html - npm run delDis command.
 
-## Project URL:
+## Project URL: https://starlit-puppy-06210c.netlify.app/
 
 Contacts for reviews and suggestions:
 
