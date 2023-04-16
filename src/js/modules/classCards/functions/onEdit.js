@@ -50,7 +50,7 @@ export function onEdit(token) {
             ) {
                 visitForm.querySelector("#clear-btn").click();
                 visitForm.removeAttribute("data-edit-id");
-                modalTitle.textContent = "Create Card";
+                modalTitle.textContent = "Create Visit";
                 document.removeEventListener("click", overForm);
             }
         }

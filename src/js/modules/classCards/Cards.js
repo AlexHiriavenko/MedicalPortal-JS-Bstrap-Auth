@@ -5,7 +5,6 @@ import { onShowMore } from "./functions/onShowMore.js";
 import { onEdit } from "./functions/onEdit.js";
 import { fullContent } from "./functions/FullContent.js";
 
-
 export const cardsRequests = new Requests();
 
 export const h1 = document.querySelector("h1.display-2.text-center.main_title");
@@ -16,7 +15,7 @@ class VisitCards {
     }
 
     renderCardsSection() {
-        this.cardsSection =  document.createElement("section");
+        this.cardsSection = document.createElement("section");
         const classesCardsSection = [
             "cards",
             "row",
@@ -32,10 +31,10 @@ class VisitCards {
         this.messageEmpty.style.textAlign = "center";
         this.parent.after(this.cardsSection);
         this.parent.after(this.messageEmpty);
-        return this.messageEmpty
+        return this.messageEmpty;
     }
 
-    renderCard (cardObj) {
+    renderCard(cardObj) {
         const card = document.createElement("div");
         card.classList.add("col", "wrapper-card");
 
@@ -48,7 +47,7 @@ class VisitCards {
 
     async showCards(requests, token) {
         const requestsCards = await requests.getCards(token);
-  
+
         if (requestsCards.length < 1) {
             this.messageEmpty.classList.replace("d-none", "d-block");
         } else {
@@ -84,10 +83,9 @@ class VisitCards {
                 btnEdit.addEventListener("click", onEdit(token));
             });
         }
-        console.log(cardsArray);
     }
 
-    async createCard (token, obj) {
+    async createCard(token, obj) {
         const newCardObj = await cardsRequests.createCard(token, obj);
         const card = this.renderCard(newCardObj);
 
@@ -99,24 +97,24 @@ class VisitCards {
 
         const btnEdit = card.querySelector(".btn.card-edit");
         btnEdit.addEventListener("click", onEdit(token));
-        
-        this.messageEmpty.classList.replace("d-block", "d-none") 
+
+        this.messageEmpty.classList.replace("d-block", "d-none");
         return card;
     }
 
-    async editCard (token, id, obj) {
+    async editCard(token, id, obj) {
         const editObj = await cardsRequests.editCard(token, id, obj);
         const card = document.getElementById(id).parentNode;
         card.innerHTML = shortCard(editObj);
         const cardFullContent = card.querySelector(".full-content");
         fullContent(editObj, cardFullContent);
-        
+
         const btnDel = card.querySelector(".card-del");
         btnDel.addEventListener("click", onDelete(token));
-        
+
         const btnShowMore = card.querySelector(".show-more");
         btnShowMore.addEventListener("click", onShowMore);
-        
+
         const btnEdit = card.querySelector(".btn.card-edit");
         btnEdit.addEventListener("click", onEdit(token));
     }
@@ -125,10 +123,10 @@ class VisitCards {
 export const visitCards = new VisitCards(h1);
 
 export function showAllCards(token) {
-        visitCards.renderCardsSection()
-        return visitCards
+    visitCards.renderCardsSection();
+    return visitCards
         .showCards(cardsRequests, token)
         .then((cardsArray) => visitCards.deleteCard(cardsArray, token))
         .then((cardsArray) => visitCards.showMore(cardsArray))
-        .then((cardsArray) => visitCards.showEditForm(cardsArray, token))
+        .then((cardsArray) => visitCards.showEditForm(cardsArray, token));
 }
