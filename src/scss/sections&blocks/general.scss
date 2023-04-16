@@ -1,0 +1,27 @@
+@import "header";
+@import "filterMenu";
+@import "modal";
+@import "cards";
+
+
+html {
+  height: 100%;
+}
+.background_img {
+  background: url("@img/background.jpeg");
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  background-attachment: fixed;
+  position: relative;
+  margin-bottom: 0px;
+}
+.main_container {
+  width: 90%;
+  margin: 0 auto;
+}
+.main_title {
+  padding: 2%;
+  color: #3f3f41;
+}
+
