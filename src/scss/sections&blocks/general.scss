@@ -1,36 +1,27 @@
-// main section
+@import "header";
+@import "filterMenu";
+@import "modal";
+@import "cards";
+
+
+html {
+  height: 100%;
+}
 .background_img {
-    background: url("@img/background.jpeg");
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-    position: relative;
-    margin-bottom: 0px;
-  }
-  
-  .header__logo-title {
-    color: #05137d;
-    padding-left: 5px;
-    font-size: 22px;
-  }
-  .main_container {
-    width: 60%;
-    margin-left: 30%;
-  }
-  .main_title {
-    padding: 80px 0px 40px;
-  }
+  background: url("@img/background.jpeg");
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  background-attachment: fixed;
+  position: relative;
+  margin-bottom: 0px;
+}
+.main_container {
+  width: 90%;
+  margin: 0 auto;
+}
+.main_title {
+  padding: 2%;
+  color: #3f3f41;
+}
 
-  // modal section
-  .modal-header_svg {
-    padding-right: 5px;
-    width: 30px;
-  }
-  .modal-header_title {
-    margin-bottom: 0.1rem;
-  }
-
-// appointments section
-  .nav-item_filtr {
-padding-left: 20px;
-  }
