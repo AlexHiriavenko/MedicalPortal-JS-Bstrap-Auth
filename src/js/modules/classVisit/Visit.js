@@ -15,6 +15,10 @@ export default class Visit {
     // Метод инициализации класса добавляет обработчики событий для выпадающего меню докторов и кнопки отправки формы.
     // Также он вызывает метод showInputs(), который скрывает некоторые поля формы при инициализации.
     init() {
+        this.visitForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            this.submit();
+        });
         const allowedKeys = ["+", "Backspace", "Delete", "Escape"];
 
         this.phoneInput.addEventListener("keydown", function (event) {
@@ -59,7 +63,6 @@ export default class Visit {
         this.bmiInput = document.getElementById("bodyMassIndex");
         this.dofheartInput = document.getElementById("diseasesOfHeart");
         this.pressureInput = document.getElementById("pressure");
-
         this.selectDoctors.style.display = "block"; // показывает выпадающее меню докторов
         this.titleInput.style.display = "block"; // показывает поле для ввода названия посещения
         this.priorityInputs.forEach((input) => {
