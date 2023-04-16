@@ -8,17 +8,23 @@ export default class Visit {
         this.modal = modal;
         this.selectDoctors = document.querySelectorAll(".select-doctors")[0];
         this.lastVisitInput = document.getElementById("lastVisit");
+        this.phoneInput = document.getElementById("phone");
     }
 
     getElements() {}
     // Метод инициализации класса добавляет обработчики событий для выпадающего меню докторов и кнопки отправки формы.
     // Также он вызывает метод showInputs(), который скрывает некоторые поля формы при инициализации.
     init() {
-        this.visitForm.addEventListener("submit", (event) => {
-            event.preventDefault();
-            this.submit();
-        });
+        const allowedKeys = ["+", "Backspace", "Delete", "Escape"];
 
+        this.phoneInput.addEventListener("keydown", function (event) {
+            if (allowedKeys.includes(event.key) || /\d/.test(event.key)) {
+                return true;
+            } else {
+                event.preventDefault();
+                return false;
+            }
+        });
         this.showInputs();
         const close = this.modal.querySelector(".btn-close");
         close.addEventListener("click", () => {
@@ -46,7 +52,6 @@ export default class Visit {
         this.priorityInputs = this.modal.querySelectorAll('input[name="priority"]');
         this.nameInput = document.getElementById("name");
         this.submitBtn = document.getElementById("submit-btn");
-        this.phoneInput = document.getElementById("phone");
         this.dateInput = document.getElementById("date");
         this.dateTitle = document.getElementById("dateTitle");
         this.ageInput = document.getElementById("age");
