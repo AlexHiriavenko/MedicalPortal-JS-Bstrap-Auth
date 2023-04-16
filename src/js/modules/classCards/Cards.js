@@ -23,6 +23,7 @@ class VisitCards {
             "row-cols-md-2",
             "row-cols-lg-3",
             "g-4",
+            "align-items-start",
         ];
         this.cardsSection.classList.add(...classesCardsSection);
         this.messageEmpty = document.createElement("h2");
