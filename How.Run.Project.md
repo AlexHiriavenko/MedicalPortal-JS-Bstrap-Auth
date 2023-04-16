@@ -12,3 +12,5 @@
 Протестировать проект и залогиниться можно с помощью:
 login: medicalPortal@test.com
 password: 12345
+
+url проекта: https://starlit-puppy-06210c.netlify.app/
