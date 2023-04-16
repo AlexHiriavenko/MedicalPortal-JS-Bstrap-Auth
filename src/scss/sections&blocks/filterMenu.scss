@@ -1,9 +1,15 @@
 // appointments section
 .nav-item_filtr {
-         padding-left: 20px;
-         font-size: 18px;
-       }
-       .navbar_title {
-         color: #3f3f41;
-       }
-     
+  padding-left: 20px;
+  font-size: 18px;
+}
+
+#cardsFilter {
+background-image: url("@img/bg.jpg");
+background-size: cover;
+color: white;
+}
+
+#cardsFilter button {
+min-width: 80px;
+}

@@ -1,12 +1,17 @@
 //header section
 .header__logo-title {
-         color: #05137d;
-         padding-left: 5px;
-         font-size: 22px;
-       
-         @media screen and (max-width: 767px) {
-           font-size: 18px;
-           margin-bottom: 0px;
-         }
-       }
-     
+  color: #05137d;
+  padding-left: 5px;
+  font-size: 22px;
+
+  @media screen and (max-width: 767px) {
+    font-size: 18px;
+    margin-bottom: 0px;
+  }
+}
+
+header button {
+min-width: 100px;
+overflow: hidden;
+max-height: 38px;
+}  

@@ -1,36 +1,39 @@
-<nav id="cardsFilter" class="navbar navbar-expand-lg bg-transparent d-none">
-    <div class="container-fluid d-flex justify-content-center align-items-end">
-        <h2 class="me-3 mb-0"><img height="32" width="32" src="src/img/filter_icon.png" alt="logo"> Visits filter:</h2>
-             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-                      aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-             </button>
-             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <form class="d-flex justify-content-center align-items-end"> 
-                    <div class="form-group me-3">
-                      <label for="searchInput" class="mr-2"></label>
-                      <input type="text" class="form-control" id="searchInput" placeholder="Enter purpose visit">
-                    </div>
-                    <div class="form-group me-3">
-                      <label for="select1" class="mr-2"></label>
-                      <select class="form-control" id="selectStatus">
-                        <option>Status:</option>
-                        <option>Open</option>
-                        <option>Done</option>
-                      </select>
-                    </div>
-                    <div class="form-group me-3">
-                      <label for="select2" class="mr-2"></label>
-                      <select class="form-control" id="select2">
-                        <option>Priority:</option>
-                        <option>High</option>
-                        <option>Normal</option>
-                        <option>Low</option>
-                      </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Search</button>
-                  </form>   
-             </div>
-    </div>
+<nav id="cardsFilter" class="nav-item_filtr navbar navbar-expand-lg d-none">
+  <div class="container-fluid d-flex justify-content-center align-items-end">
+      <h2 class="navbar_title me-3 mb-0"><img height="32" width="32" src="@img/filter_icon.png" alt="logo"> Visits
+          Filter</h2>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div> 
+          <form class="d-flex flex-wrap justify-content-center align-items-end collapse navbar-collapse" id="navbarNavDropdown">
+              <div class="form-group me-3">
+                  <label for="searchInput" class="mr-2"></label>
+                  <input type="search" class="form-control" id="searchInput" placeholder="Enter purpose visit">
+              </div>
+              <div class="form-group me-3">
+                  <label for="selectStatus" class="mr-2"></label>
+                  <select class="form-control" id="selectStatus">
+                      <option value="" selected disabled>Choose Status</option>
+                      <option value="Open">Open</option>
+                      <option value="Done">Done</option>
+                  </select>
+              </div>
+              <div class="form-group me-3">
+                  <label for="selectPriority" class="mr-2"></label>
+                  <select class="form-control" id="selectPriority">
+                      <option value="" selected disabled>Choose Priority</option>
+                      <option value="high">High</option>
+                      <option value="normal">Normal</option>
+                      <option value="low">Low</option>
+                  </select>
+              </div>
+              <div class="form-group me-3">
+                  <button id="searchBtn" type="button" class="btn btn-primary me-3 mt-3">Search</button>
+                  <button id="resetBtn" type="button" class="btn btn-primary me-3 mt-3">Reset</button>
+              </div>
+          </form>
+      </div>
+  </div>
 </nav>
