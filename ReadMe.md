@@ -1,6 +1,6 @@
 # Step Project Medical Portal
 
-## URL Project: https://starlit-puppy-06210c.netlify.app/
+## URL Project: https://medical-portal.netlify.app/
 
 ## Brief description of the project:
 

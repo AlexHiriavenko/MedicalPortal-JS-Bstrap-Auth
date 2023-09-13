@@ -1,6 +1,6 @@
 # Проект Medical Portal
 
-## URL Проекту: https://starlit-puppy-06210c.netlify.app/
+## URL Проекту: https://medical-portal.netlify.app/
 
 ## Короткий опис проекту:
 
