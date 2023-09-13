@@ -1,78 +1,181 @@
-<div id="modal-create-visit" class="modal fade text-center modal-lg" tabindex="-1" role="dialog">
+<div
+    id="modal-create-visit"
+    class="modal fade text-center modal-lg"
+    tabindex="-1"
+    role="dialog">
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <svg class="modal-header_svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                    fill="currentColor" class="bi bi-calendar-plus" viewBox="0 0 16 16">
+                <svg
+                    class="modal-header_svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-calendar-plus"
+                    viewBox="0 0 16 16">
                     <path
                         d="M8 7a.5.5 0 0 1 .5.5V9H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V10H6a.5.5 0 0 1 0-1h1.5V7.5A.5.5 0 0 1 8 7z" />
                     <path
                         d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
                 </svg>
                 <h4 class="modal-header_title">Create visit</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form id="visit-form">
                     <div class="doctors_section">
-                        <select class="form-select mb-3 select-doctors" aria-label="Default select example" id="doctor"
-                            name="doctor" required>
+                        <select
+                            class="form-select mb-3 select-doctors"
+                            aria-label="Default select example"
+                            id="doctor"
+                            name="doctor"
+                            required>
                             <option selected disabled>Choose a doctor:</option>
-                            <option value="cardiologist" id="cardiologist">Cardiologist</option>
-                            <option value="dentist" id="dentist">Dentist</option>
-                            <option value="therapist" id="therapist">Therapist</option>
+                            <option value="cardiologist" id="cardiologist">
+                                Cardiologist
+                            </option>
+                            <option value="dentist" id="dentist">
+                                Dentist
+                            </option>
+                            <option value="therapist" id="therapist">
+                                Therapist
+                            </option>
                         </select>
                     </div>
                     <div class="base-options">
-                        <input name="purpose" id="purpose" required type="text" class="form-control mb-3 title"
+                        <input
+                            name="purpose"
+                            id="purpose"
+                            required
+                            type="text"
+                            class="form-control mb-3 title"
                             placeholder="Purpose of visit:" />
                         <div class="priority-select" id="priority-select">
                             <h6 class="mb-2" for="priority">Priority:</h6>
                             <div class="form-check form-check-inline mb-3">
                                 <label>
                                     High
-                                    <input class="form-check-input" type="radio" name="priority" value="high"
+                                    <input
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="priority"
+                                        value="high"
                                         id="high" />
                                 </label>
                             </div>
                             <div class="form-check form-check-inline mb-3">
                                 <label>
                                     Normal
-                                    <input checked class="form-check-input" type="radio" name="priority" value="normal"
+                                    <input
+                                        checked
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="priority"
+                                        value="normal"
                                         id="normal" />
                                 </label>
                             </div>
                             <div class="form-check form-check-inline mb-3">
                                 <label>
                                     Low
-                                    <input class="form-check-input" type="radio" name="priority" value="low" id="low" />
+                                    <input
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="priority"
+                                        value="low"
+                                        id="low" />
                                 </label>
                             </div>
                         </div>
-                        <input name="name" id="name" required class="form-control mb-3" type="text" placeholder="Name surname" />
-                        <input name="phone" id="phone" required class="form-control mb-3" type="text"
-                            placeholder="Phone number" />
+                        <input
+                            name="name"
+                            id="name"
+                            required
+                            class="form-control mb-3"
+                            type="text"
+                            placeholder="Name surname"
+                            autocomplete="off" />
+                        <input
+                            name="phone"
+                            id="phone"
+                            required
+                            class="form-control mb-3"
+                            type="text"
+                            placeholder="Phone number"
+                            autocomplete="off" />
 
-                        <label class="mb-2 fw-medium pointer" id="dateTitle" for="date">Date:</label>
-                        <input required class="date mb-3 form-control pointer" type="date" id="date" name="date">
+                        <label
+                            class="mb-2 fw-medium pointer"
+                            id="dateTitle"
+                            for="date"
+                            >Date:</label
+                        >
+                        <input
+                            required
+                            class="date mb-3 form-control pointer"
+                            type="date"
+                            id="date"
+                            name="date" />
                     </div>
                     <div class="cardiologist-options">
-                        <input class="form-control mb-3" type="text" placeholder="Pressure" name="pressure"
+                        <input
+                            class="form-control mb-3"
+                            type="text"
+                            placeholder="Pressure"
+                            name="pressure"
                             id="pressure" />
-                        <input class="form-control mb-3" type="text" placeholder="Body mass index" name="bodyMassIndex"
+                        <input
+                            class="form-control mb-3"
+                            type="text"
+                            placeholder="Body mass index"
+                            name="bodyMassIndex"
                             id="bodyMassIndex" />
-                        <input class="form-control mb-3" type="text" placeholder="Diseases of heart"
-                            name="diseasesOfHeart" id="diseasesOfHeart" />
-                        <input class="form-control mb-3" type="text" placeholder="Description" name="description"
+                        <input
+                            class="form-control mb-3"
+                            type="text"
+                            placeholder="Diseases of heart"
+                            name="diseasesOfHeart"
+                            id="diseasesOfHeart" />
+                        <input
+                            class="form-control mb-3"
+                            type="text"
+                            placeholder="Description"
+                            name="description"
                             id="description" />
-                        <input class="form-control mb-3" type="text" placeholder="Age" name="age" id="age" />
+                        <input
+                            class="form-control mb-3"
+                            type="text"
+                            placeholder="Age"
+                            name="age"
+                            id="age" />
                     </div>
                     <div class="dentist-options">
-                        <input class="form-control mb-3" type="text" placeholder="Date of last visit" name="lastVisit"
+                        <input
+                            class="form-control mb-3"
+                            type="text"
+                            placeholder="Date of last visit"
+                            name="lastVisit"
                             id="lastVisit" />
                     </div>
-                    <button class="btn btn-lg btn-primary select-doctor-btn d-inline" name="submit-btn" id="submit-btn" type="submit">Submit</button>
-                    <button class="btn btn-lg btn-primary ms-4 d-inline" name="clear-btn" id="clear-btn" type="reset">Clear Form</button>
+                    <button
+                        class="btn btn-lg btn-primary select-doctor-btn d-inline"
+                        name="submit-btn"
+                        id="submit-btn"
+                        type="submit">
+                        Submit
+                    </button>
+                    <button
+                        class="btn btn-lg btn-primary ms-4 d-inline"
+                        name="clear-btn"
+                        id="clear-btn"
+                        type="reset">
+                        Clear Form
+                    </button>
                 </form>
             </div>
         </div>

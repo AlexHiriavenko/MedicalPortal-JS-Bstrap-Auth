@@ -21,6 +21,7 @@ export default class FormsLogin extends Forms {
          type="email"
          class="form-control mb-3"
          placeholder="name@example.com"
+         autocomplete="off"
          required />
         <label for="input-email">Email address</label>
         </div>
