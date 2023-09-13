@@ -3,7 +3,7 @@ import { shortCard } from "./functions/shortCard.js";
 import { onDelete } from "./functions/onDelete.js";
 import { onShowMore } from "./functions/onShowMore.js";
 import { onEdit } from "./functions/onEdit.js";
-import { fullContent } from "./functions/FullContent.js";
+import { fullContent } from "./functions/fullContent.js";
 
 export const cardsRequests = new Requests();
 
@@ -52,7 +52,9 @@ class VisitCards {
         if (requestsCards.length < 1) {
             this.messageEmpty.classList.replace("d-none", "d-block");
         } else {
-            const renderCards = await requestsCards.map((cardObj) => this.renderCard(cardObj));
+            const renderCards = await requestsCards.map((cardObj) =>
+                this.renderCard(cardObj)
+            );
             return renderCards;
         }
     }
